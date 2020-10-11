@@ -38,12 +38,6 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 
 环境检查通过之后，进入 `nvim`，按下快捷键 `,,i` 快速安装插件即可。
 
-将 nvim 设为默认编辑器，使用如下指令即可。
-
-```bash
-
-```
-
 # 二、快捷键
 
 ## 2.1 插件相关
