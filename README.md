@@ -4,6 +4,8 @@
 * [一、安装](#一安装)
 * [二、快捷键](#二快捷键)
     * [2.1 插件相关](#21-插件相关)
+        * [2.1.1 总览](#211-总览)
+        * [2.1.2 vimwiki/vimwiki](#212-vimwikivimwiki)
     * [2.2 插入模式](#22-插入模式)
     * [2.3 缓存操作](#23-缓存操作)
     * [2.4 窗口操作](#24-窗口操作)
@@ -42,66 +44,83 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 
 ## 2.1 插件相关
 
-| 快捷键              | 说明                                            |
-|---------------------|-------------------------------------------------|
-| `,`                 | Leader Key                                      |
-| `<leader>n`         | 打开/关闭代码资源管理器                         |
-| `<leader>t`         | 打开/关闭函数列表                               |
-| `<leader>a`         | .h .cpp 文件切换                                |
-| `<leader>u`         | 转到函数声明                                    |
-| `<leader>U`         | 转到函数实现                                    |
-| `<leader>u`         | 转到变量声明                                    |
-| `<leader>o`         | 打开include文件                                 |
-| `<leader>y`         | 拷贝函数声明                                    |
-| `<leader>p`         | 生成函数实现                                    |
-| `<leader>w`         | 单词跳转                                        |
-| `<leader>f`         | 搜索~目录下的文件                               |
-| `<leader>F`         | 搜索当前目录下的文本                            |
-| `<leader>g`         | 显示git仓库提交记录                             |
-| `<leader>G`         | 显示当前文件提交记录                            |
-| `<leader>gg`        | 显示当前文件在某个commit下的完整内容            |
-| `<leader>ff`        | 语法错误自动修复(FixIt)                         |
-| `<c-p>`             | 切换到上一个buffer                              |
-| `<c-n>`             | 切换到下一个buffer                              |
-| `<leader>d`         | 删除当前buffer                                  |
-| `<leader>D`         | 删除当前buffer外的所有buffer                    |
-| `vim`               | 运行vim编辑器时,默认启动开始页面                |
-| `<F5>`              | 显示语法错误提示窗口                            |
-| `<F9>`              | 显示上一主题                                    |
-| `<F10>`             | 显示下一主题                                    |
-| `<leader>l`         | 按竖线对齐                                      |
-| `<leader>=`         | 按等号对齐                                      |
-| `Ya`                | 复制行文本到字母a                               |
-| `Da`                | 剪切行文本到字母a                               |
-| `Ca`                | 改写行文本到字母a                               |
-| `rr`                | 替换文本                                        |
-| `<leader>r`         | 全局替换，目前只支持单个文件                    |
-| `rev`               | 翻转当前光标下的单词或使用V模式选择的文本       |
-| `gcc`               | 注释代码                                        |
-| `gcap`              | 注释段落                                        |
-| `vif`               | 选中函数内容                                    |
-| `dif`               | 删除函数内容                                    |
-| `cif`               | 改写函数内容                                    |
-| `vaf`               | 选中函数内容（包括函数名 花括号）               |
-| `daf`               | 删除函数内容（包括函数名 花括号）               |
-| `caf`               | 改写函数内容（包括函数名 花括号）               |
-| `fa`                | 查找字母a，然后再按f键查找下一个                |
-| `<leader>s`         | 重新加载~/.config/nvim/init.vim文件             |
-| `<leader>e`         | 快速编辑~/.config/nvim/init.vim文件             |
-| `<leader>ve`        | 快速编辑~/.config/nvim/vimplusrc.vim文件        |
-| `<leader>vp`        | 快速编辑~/.config/nvim/vimrc.custom.plugins文件 |
-| `<leader>vc`        | 快速编辑~/.config/nvim/vimrc.custom.config文件  |
-| `<leader>h`         | 打开vimplus帮助文档                             |
-| `<leader>H`         | 打开当前光标所在单词的vim帮助文档               |
-| `<leader><leader>t` | 生成try-catch代码块                             |
-| `<leader><leader>y` | 复制当前选中到系统剪切板                        |
-| `<leader><leader>i` | 安装插件                                        |
-| `<leader><leader>u` | 更新插件                                        |
-| `<leader><leader>c` | 删除插件                                        |
-| `F7`                | 开启 Markdown 预览                              |
-| `F8`                | 关闭 Markdown 预览                              |
-| `F4`                | 格式化 Json 文件                                |
-| `F5`                | 插入目录                                        |
+### 2.1.1 总览
+
+| 快捷键              | 说明                                                |
+|---------------------|-----------------------------------------------------|
+| `,`                 | Leader Key                                          |
+| `<leader>n`         | 打开/关闭代码资源管理器                             |
+| `<leader>t`         | 打开/关闭函数列表                                   |
+| `<leader>a`         | .h .cpp 文件切换                                    |
+| `<leader>u`         | 转到函数声明                                        |
+| `<leader>U`         | 转到函数实现                                        |
+| `<leader>u`         | 转到变量声明                                        |
+| `<leader>o`         | 打开include文件                                     |
+| `<leader>y`         | 拷贝函数声明                                        |
+| `<leader>p`         | 生成函数实现                                        |
+| `<leader>w`         | 单词跳转                                            |
+| `<leader>f`         | 搜索~目录下的文件                                   |
+| `<leader>F`         | 搜索当前目录下的文本                                |
+| `<leader>g`         | 显示git仓库提交记录                                 |
+| `<leader>G`         | 显示当前文件提交记录                                |
+| `<leader>gg`        | 显示当前文件在某个commit下的完整内容                |
+| `<leader>ff`        | 语法错误自动修复(FixIt)                             |
+| `<c-p>`             | 切换到上一个buffer                                  |
+| `<c-n>`             | 切换到下一个buffer                                  |
+| `<leader>d`         | 删除当前buffer                                      |
+| `<leader>D`         | 删除当前buffer外的所有buffer                        |
+| `vim`               | 运行vim编辑器时,默认启动开始页面                    |
+| `<F5>`              | 显示语法错误提示窗口                                |
+| `<F9>`              | 显示上一主题                                        |
+| `<F10>`             | 显示下一主题                                        |
+| `<leader>l`         | 按竖线对齐                                          |
+| `<leader>=`         | 按等号对齐                                          |
+| `Ya`                | 复制行文本到字母a                                   |
+| `Da`                | 剪切行文本到字母a                                   |
+| `Ca`                | 改写行文本到字母a                                   |
+| `rr`                | 替换文本                                            |
+| `<leader>r`         | 全局替换，目前只支持单个文件                        |
+| `rev`               | 翻转当前光标下的单词或使用V模式选择的文本           |
+| `gcc`               | 注释代码                                            |
+| `gcap`              | 注释段落                                            |
+| `vif`               | 选中函数内容                                        |
+| `dif`               | 删除函数内容                                        |
+| `cif`               | 改写函数内容                                        |
+| `vaf`               | 选中函数内容（包括函数名 花括号）                   |
+| `daf`               | 删除函数内容（包括函数名 花括号）                   |
+| `caf`               | 改写函数内容（包括函数名 花括号）                   |
+| `fa`                | 查找字母a，然后再按f键查找下一个                    |
+| `<leader>s`         | 重新加载~/.config/nvim/init.vim文件                 |
+| `<leader>e`         | 快速编辑~/.config/nvim/init.vim文件                 |
+| `<leader>ve`        | 快速编辑~/.config/nvim/vimplusrc.vim文件            |
+| `<leader>vp`        | 快速编辑~/.config/nvim/vimrc.custom.plugins文件     |
+| `<leader>vc`        | 快速编辑~/.config/nvim/vimrc.custom.config文件      |
+| `<leader>h`         | 打开vimplus帮助文档                                 |
+| `<leader>H`         | 打开当前光标所在单词的vim帮助文档                   |
+| `<leader><leader>t` | 生成try-catch代码块                                 |
+| `<leader><leader>y` | 复制当前选中到系统剪切板                            |
+| `<leader><leader>i` | 安装插件                                            |
+| `<leader><leader>u` | 更新插件                                            |
+| `<leader><leader>c` | 删除插件                                            |
+| `F7`                | 开启 Markdown 预览                                  |
+| `F8`                | 关闭 Markdown 预览                                  |
+| `F4`                | 格式化 Json 文件                                    |
+| `F5`                | 插入目录                                            |
+
+### 2.1.2 vimwiki/vimwiki
+
+| 快捷键              | 说明                                                                             |
+|---------------------|----------------------------------------------------------------------------------|
+| `<leader><leader>w` | Normal 模式下，按 `,,w` 键，进入 vimwiki 文档存储库；                            |
+| `<Leader>ww`        | 打开默认的 wiki 文档存储库；                                                     |
+| `<Leader>wt`        | 在一个新的 Tab 标签中打开 wiki 文档存储库；                                      |
+| `<Leader>ws`        | 选择并打开一个 wiki 文档存储库；                                                 |
+| `<Leader>wd`        | 删除当前所在的 wiki 文档存储库；                                                 |
+| `<Leader>wr`        | 重命名当前所在的 wiki 文档存储库；                                               |
+| `<Enter>`           | Normal 模式下，在目标文字上按下 `Enter` 键来创建 wiki 链接，再按回车则进入链接； |
+| `<BackSpace>`       | Normal 模式下，按删除键，则退回到上一个链接；                                    |
+| `<Tab>`             | Normal 模式下，按 `Tab` 键，从当前位置跳到下一个链接处；                         |
+| `<Shift-Tab>`       | Normal 模式下，按 `Shift + Tab` 键，从当前位置跳到上一个链接处；                 |
 
 ## 2.2 插入模式
 
@@ -115,7 +134,6 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `O`     | 在上一行插入新行并进入插入模式 |
 | `gi`    | 进入到上一次插入模式的位置     |
 | `<esc>` | 退出插入模式                   |
-
 
 ## 2.3 缓存操作
 
@@ -374,7 +392,6 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `h quote`              | 寄存器                       |
 | `h autocommand-events` | 所有可能事件                 |
 | `h write-plugin`       | 编写插件                     |
-
 
 ## 2.12 其他
 
