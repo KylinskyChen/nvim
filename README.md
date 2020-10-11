@@ -21,7 +21,27 @@
 # 一、安装
 
 ```bash
+sudo apt install yarn
+sudo apt install vim neovim
+pip3 install pynvim
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python2.7 get-pip.py
+python3 get-pip.py
+pip2 install pynvim
+sudo apt install ruby
+gem sources -a https://rubygems.org/
+gem install -g neovim
 git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
+```
+
+进入之后，输入 `:checkhealth` 进行环境检查，根据提示，让所有要求都变成 ok。
+
+环境检查通过之后，进入 `nvim`，按下快捷键 `,,i` 快速安装插件即可。
+
+将 nvim 设为默认编辑器，使用如下指令即可。
+
+```bash
+
 ```
 
 # 二、快捷键
