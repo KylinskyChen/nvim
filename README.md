@@ -17,6 +17,7 @@
     * [2.10 实用命令](#210-实用命令)
     * [2.11 帮助](#211-帮助)
     * [2.12 其他](#212-其他)
+* [三、待解决的问题](#三待解决的问题)
 
 <!-- vim-markdown-toc -->
 
@@ -109,6 +110,8 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 
 ### 2.1.2 vimwiki/vimwiki
 
+该插件使用后会导致 markdown 的高亮消失，如果不使用的时候建议先禁用掉。
+
 | 快捷键              | 说明                                                                             |
 |---------------------|----------------------------------------------------------------------------------|
 | `<leader><leader>w` | Normal 模式下，按 `,,w` 键，进入 vimwiki 文档存储库；                            |
@@ -143,7 +146,6 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `:bp`           | 切换到上一个buffer |
 | `:bn`           | 切换到下一个buffer |
 | `:bd`           | 删除当前buffer     |
-
 
 ## 2.4 窗口操作
 
@@ -400,4 +402,7 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `vim -u NONE -N`      | 开启vim时不加载vimrc文件   |
 | `vimdiff file1 file2` | 显示文件差异               |
 | `vim -R filename`     | 以只读方式打开（阅读模式） |
+
+# 三、待解决的问题
+
 

@@ -21,9 +21,8 @@ Plug 'junegunn/fzf'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'previm/previm'
 Plug 'iamcco/mathjax-support-for-mkdp'
-" Plug 'iamcco/markdown-preview.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 
 " Plug 'ferrine/md-img-paste.vim' 
 " 将剪切板中的图片插入为Markdown 代码
