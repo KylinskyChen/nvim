@@ -6,6 +6,7 @@
     * [2.1 插件相关](#21-插件相关)
         * [2.1.1 总览](#211-总览)
         * [2.1.2 vimwiki/vimwiki](#212-vimwikivimwiki)
+        * [2.1.3 skywind3000/vim-terminal-help](#213-skywind3000vim-terminal-help)
     * [2.2 插入模式](#22-插入模式)
     * [2.3 缓存操作](#23-缓存操作)
     * [2.4 窗口操作](#24-窗口操作)
@@ -125,6 +126,22 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `<Tab>`             | Normal 模式下，按 `Tab` 键，从当前位置跳到下一个链接处；                         |
 | `<Shift-Tab>`       | Normal 模式下，按 `Shift + Tab` 键，从当前位置跳到上一个链接处；                 |
 
+### 2.1.3 [skywind3000/vim-terminal-help](https://github.com/skywind3000/vim-terminal-help)
+
+| 快捷键   | 说明                   |
+|----------|------------------------|
+| `<Alt>=` | 从底部呼出终端；       |
+| `<Alt>q` | 从终端退出到普通模式； |
+
+自定义的快捷键：
+
+| 快捷键   | 说明                           |
+|----------|--------------------------------|
+| `<Alt>u` | 当前列最上面新开一个终端窗口； |
+| `<Alt>d` | 当前列最下面新开一个终端窗口； |
+| `<Alt>l` | 当前行最左侧新开一个终端窗口； |
+| `<Alt>r` | 当前行最右侧新开一个终端窗口； |
+
 ## 2.2 插入模式
 
 | 快捷键  | 说明                           |
@@ -132,9 +149,9 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `i`     | 在光标处进入插入模式           |
 | `I`     | 在行首进入插入模式             |
 | `a`     | 在光标后进入插入模式           |
-| `A`     | 在行尾进入插入模式             |
-| `o`     | 在下一行插入新行并进入插入模式 |
-| `O`     | 在上一行插入新行并进入插入模式 |
+| `A`     | 在行尾进入插入模式             | 
+| `o`     | 在下一行插入新行并进入插入模式 | 
+| `O`     | 在上一行插入新行并进入插入模式 | 
 | `gi`    | 进入到上一次插入模式的位置     |
 | `<esc>` | 退出插入模式                   |
 
@@ -160,7 +177,6 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `<c-w>c`          | 关闭当前窗口           |
 | `<c-w>o`          | 关闭其他窗口           |
 | `:only`           | 关闭其他窗口           |
-
 
 ## 2.5 光标移动
 
