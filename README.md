@@ -128,6 +128,8 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 
 ### 2.1.3 [skywind3000/vim-terminal-help](https://github.com/skywind3000/vim-terminal-help)
 
+该插件用于快速呼出终端。
+
 | 快捷键   | 说明                   |
 |----------|------------------------|
 | `<Alt>=` | 从底部呼出终端；       |
@@ -137,10 +139,10 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 
 | 快捷键   | 说明                           |
 |----------|--------------------------------|
-| `<Alt>u` | 当前列最上面新开一个终端窗口； |
-| `<Alt>d` | 当前列最下面新开一个终端窗口； |
-| `<Alt>l` | 当前行最左侧新开一个终端窗口； |
-| `<Alt>r` | 当前行最右侧新开一个终端窗口； |
+| `<Alt>u` | 当前窗口上面新开一个终端窗口； |
+| `<Alt>d` | 当前窗口下面新开一个终端窗口； |
+| `<Alt>l` | 当前窗口左侧新开一个终端窗口； |
+| `<Alt>r` | 当前窗口右侧新开一个终端窗口； |
 
 ## 2.2 插入模式
 
