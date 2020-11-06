@@ -32,9 +32,12 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python2.7 get-pip.py
 python3 get-pip.py
 pip2 install pynvim
-sudo apt install ruby
-gem sources -a http://rubygems.org/
+sudo apt install ruby ruby-dev
+gem sources -a https://gems.ruby-china.com
 gem install -g neovim
+sud apt install npm
+npm config set registry https://registry.npm.taobao.org/
+sudo npm install -g neovim
 git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 ```
 
