@@ -33,7 +33,7 @@ python2.7 get-pip.py
 python3 get-pip.py
 pip2 install pynvim
 sudo apt install ruby
-gem sources -a https://rubygems.org/
+gem sources -a http://rubygems.org/
 gem install -g neovim
 git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 ```
