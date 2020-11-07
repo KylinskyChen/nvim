@@ -7,6 +7,7 @@
         * [2.1.1 总览](#211-总览)
         * [2.1.2 vimwiki/vimwiki](#212-vimwikivimwiki)
         * [2.1.3 skywind3000/vim-terminal-help](#213-skywind3000vim-terminal-help)
+        * [2.1.4 neoclide/coc.nvim](#214-neoclidecocnvim)
     * [2.2 插入模式](#22-插入模式)
     * [2.3 缓存操作](#23-缓存操作)
     * [2.4 窗口操作](#24-窗口操作)
@@ -146,6 +147,25 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `<Alt>d` | 当前窗口下面新开一个终端窗口； |
 | `<Alt>l` | 当前窗口左侧新开一个终端窗口； |
 | `<Alt>r` | 当前窗口右侧新开一个终端窗口； |
+
+### 2.1.4 [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) 
+
+| 快捷键               | 说明                          |
+|----------------------|-------------------------------|
+| :CocInstall          | 安装一个新的 coc 插件；       |
+| :CocUninstall        | 卸载一个 coc 插件；           |
+| :CocList extesions   | 列出当前 coc 插件；           |
+| :CocList marketplace | 列出所有可以安装的 coc 插件； |
+| <ctrl> + 空格        | 开启自动补全；                |
+| [g                   | 查找上一个报错；              |
+| ]g                   | 查找下一个报错；              |
+| gd                   | 查看定义；                    |
+| gy                   | 查看类型定义；                |
+| gi                   | 查看实现；                    |
+| gr                   | 查看声明；                    |
+| K                    | 查看文档说明；                |
+| <leader>rn           | 当前变量重命名；              |
+| <leader>f            | 代码格式化；                  |
 
 ## 2.2 插入模式
 
