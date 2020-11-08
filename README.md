@@ -8,6 +8,7 @@
         * [2.1.2 vimwiki/vimwiki](#212-vimwikivimwiki)
         * [2.1.3 skywind3000/vim-terminal-help](#213-skywind3000vim-terminal-help)
         * [2.1.4 neoclide/coc.nvim](#214-neoclidecocnvim)
+        * [2.1.5 Yggdroot/indentLine](#215-yggdrootindentline)
     * [2.2 插入模式](#22-插入模式)
     * [2.3 缓存操作](#23-缓存操作)
     * [2.4 窗口操作](#24-窗口操作)
@@ -50,68 +51,88 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 
 ## 2.1 插件相关
 
+[VIM学习笔记 折叠 (Fold)](https://zhuanlan.zhihu.com/p/27473875) 
+
+[Vim设置默认字体、窗口大小和配色方案](https://blog.csdn.net/u013541325/article/details/107677593) 
+
 ### 2.1.1 总览
 
-| 快捷键              | 说明                                                |
-|---------------------|-----------------------------------------------------|
-| `,`                 | Leader Key                                          |
-| `<leader>n`         | 打开/关闭代码资源管理器                             |
-| `<leader>t`         | 打开/关闭函数列表                                   |
-| `<leader>a`         | .h .cpp 文件切换                                    |
-| `<leader>u`         | 转到函数声明                                        |
-| `<leader>U`         | 转到函数实现                                        |
-| `<leader>u`         | 转到变量声明                                        |
-| `<leader>o`         | 打开include文件                                     |
-| `<leader>y`         | 拷贝函数声明                                        |
-| `<leader>p`         | 生成函数实现                                        |
-| `<leader>w`         | 单词跳转                                            |
-| `<leader>f`         | 搜索~目录下的文件                                   |
-| `<leader>F`         | 搜索当前目录下的文本                                |
-| `<leader>g`         | 显示git仓库提交记录                                 |
-| `<leader>G`         | 显示当前文件提交记录                                |
-| `<leader>gg`        | 显示当前文件在某个commit下的完整内容                |
-| `<leader>ff`        | 语法错误自动修复(FixIt)                             |
-| `<c-p>`             | 切换到上一个buffer                                  |
-| `<c-n>`             | 切换到下一个buffer                                  |
-| `<leader>d`         | 删除当前buffer                                      |
-| `<leader>D`         | 删除当前buffer外的所有buffer                        |
-| `vim`               | 运行vim编辑器时,默认启动开始页面                    |
-| `<F5>`              | 显示语法错误提示窗口                                |
-| `<F9>`              | 显示上一主题                                        |
-| `<F10>`             | 显示下一主题                                        |
-| `<leader>l`         | 按竖线对齐                                          |
-| `<leader>=`         | 按等号对齐                                          |
-| `Ya`                | 复制行文本到字母a                                   |
-| `Da`                | 剪切行文本到字母a                                   |
-| `Ca`                | 改写行文本到字母a                                   |
-| `rr`                | 替换文本                                            |
-| `<leader>r`         | 全局替换，目前只支持单个文件                        |
-| `rev`               | 翻转当前光标下的单词或使用V模式选择的文本           |
-| `gcc`               | 注释代码                                            |
-| `gcap`              | 注释段落                                            |
-| `vif`               | 选中函数内容                                        |
-| `dif`               | 删除函数内容                                        |
-| `cif`               | 改写函数内容                                        |
-| `vaf`               | 选中函数内容（包括函数名 花括号）                   |
-| `daf`               | 删除函数内容（包括函数名 花括号）                   |
-| `caf`               | 改写函数内容（包括函数名 花括号）                   |
-| `fa`                | 查找字母a，然后再按f键查找下一个                    |
-| `<leader>s`         | 重新加载~/.config/nvim/init.vim文件                 |
-| `<leader>e`         | 快速编辑~/.config/nvim/init.vim文件                 |
-| `<leader>ve`        | 快速编辑~/.config/nvim/vimplusrc.vim文件            |
-| `<leader>vp`        | 快速编辑~/.config/nvim/vimrc.custom.plugins文件     |
-| `<leader>vc`        | 快速编辑~/.config/nvim/vimrc.custom.config文件      |
-| `<leader>h`         | 打开vimplus帮助文档                                 |
-| `<leader>H`         | 打开当前光标所在单词的vim帮助文档                   |
-| `<leader><leader>t` | 生成try-catch代码块                                 |
-| `<leader><leader>y` | 复制当前选中到系统剪切板                            |
-| `<leader><leader>i` | 安装插件                                            |
-| `<leader><leader>u` | 更新插件                                            |
-| `<leader><leader>c` | 删除插件                                            |
-| `F7`                | 开启 Markdown 预览                                  |
-| `F8`                | 关闭 Markdown 预览                                  |
-| `F4`                | 格式化 Json 文件                                    |
-| `F5`                | 插入目录                                            |
+| 快捷键              | 说明                                            |
+|---------------------|-------------------------------------------------|
+| `,`                 | Leader Key                                      |
+| `<leader>n`         | 打开/关闭代码资源管理器                         |
+| `<leader>t`         | 打开/关闭函数列表                               |
+| `<leader>a`         | .h .cpp 文件切换                                |
+| `<leader>u`         | 转到函数声明                                    |
+| `<leader>U`         | 转到函数实现                                    |
+| `<leader>u`         | 转到变量声明                                    |
+| `<leader>o`         | 打开include文件                                 |
+| `<leader>y`         | 拷贝函数声明                                    |
+| `<leader>p`         | 生成函数实现                                    |
+| `<leader>w`         | 单词跳转                                        |
+| `<leader>f`         | 搜索~目录下的文件                               |
+| `<leader>F`         | 搜索当前目录下的文本                            |
+| `<leader>g`         | 显示git仓库提交记录                             |
+| `<leader>G`         | 显示当前文件提交记录                            |
+| `<leader>gg`        | 显示当前文件在某个commit下的完整内容            |
+| `<leader>ff`        | 语法错误自动修复(FixIt)                         |
+| `<c-p>`             | 切换到上一个buffer                              |
+| `<c-n>`             | 切换到下一个buffer                              |
+| `<leader>d`         | 删除当前buffer                                  |
+| `<leader>D`         | 删除当前buffer外的所有buffer                    |
+| `vim`               | 运行vim编辑器时,默认启动开始页面                |
+| `<F5>`              | 显示语法错误提示窗口                            |
+| `<F9>`              | 显示上一主题                                    |
+| `<F10>`             | 显示下一主题                                    |
+| `<leader>l`         | 按竖线对齐                                      |
+| `<leader>=`         | 按等号对齐                                      |
+| `Ya`                | 复制行文本到字母a                               |
+| `Da`                | 剪切行文本到字母a                               |
+| `Ca`                | 改写行文本到字母a                               |
+| `rr`                | 替换文本                                        |
+| `<leader>r`         | 全局替换，目前只支持单个文件                    |
+| `rev`               | 翻转当前光标下的单词或使用V模式选择的文本       |
+| `gcc`               | 注释代码                                        |
+| `gcap`              | 注释段落                                        |
+| `vif`               | 选中函数内容                                    |
+| `dif`               | 删除函数内容                                    |
+| `cif`               | 改写函数内容                                    |
+| `vaf`               | 选中函数内容（包括函数名 花括号）               |
+| `daf`               | 删除函数内容（包括函数名 花括号）               |
+| `caf`               | 改写函数内容（包括函数名 花括号）               |
+| `fa`                | 查找字母a，然后再按f键查找下一个                |
+| `<leader>s`         | 重新加载~/.config/nvim/init.vim文件             |
+| `<leader>e`         | 快速编辑~/.config/nvim/init.vim文件             |
+| `<leader>ve`        | 快速编辑~/.config/nvim/vimplusrc.vim文件        |
+| `<leader>vp`        | 快速编辑~/.config/nvim/vimrc.custom.plugins文件 |
+| `<leader>vc`        | 快速编辑~/.config/nvim/vimrc.custom.config文件  |
+| `<leader>h`         | 打开vimplus帮助文档                             |
+| `<leader>H`         | 打开当前光标所在单词的vim帮助文档               |
+| `<leader><leader>t` | 生成try-catch代码块                             |
+| `<leader><leader>y` | 复制当前选中到系统剪切板                        |
+| `<leader><leader>i` | 安装插件                                        |
+| `<leader><leader>u` | 更新插件                                        |
+| `<leader><leader>c` | 删除插件                                        |
+| `F7`                | 开启 Markdown 预览                              |
+| `F8`                | 关闭 Markdown 预览                              |
+| `F4`                | 格式化 Json 文件                                |
+| `F5`                | 插入目录                                        |
+| `zf`                | 折叠选中代码；                                  |
+| `za`                | 展开、折叠代码；                                |
+| `zo`                | 打开当前折叠；                                  |
+| `zm`                | 关闭所有折叠；                                  |
+| `zM`                | 关闭所有折叠以及嵌套的折叠；                    |
+| `zr`                | 打开所有折叠；                                  |
+| `zR`                | 打开所有折叠以及嵌套折叠；                      |
+| `zd`                | 删除当前折叠；                                  |
+| `zE`                | 删除所有折叠；                                  |
+| `zj`                | 移动至下一个折叠；                              |
+| `zk`                | 移动至上一个折叠；                              |
+| `zn`                | 禁用折叠；                                      |
+| `zN`                | 启用折叠；                                      |
+| `zfa(`              | 折叠括号或其他符号内的文字；                    |
+| :mkview             | 保存折叠状态；                                  |
+| :loadview           | 载入记忆的折叠信息；                            |
 
 ### 2.1.2 vimwiki/vimwiki
 
@@ -166,6 +187,12 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | K                    | 查看文档说明；                |
 | <leader>rn           | 当前变量重命名；              |
 | <leader>f            | 代码格式化；                  |
+
+### 2.1.5 [Yggdroot/indentLine](https://github.com/Yggdroot/indentLine) 
+
+[Neovim+Coc.nvim配置 目前个人最舒服终端编辑环境(Python&C++)](https://www.cnblogs.com/cniwoq/p/13272746.html) 
+
+此插件提供的一个可视化的缩进。
 
 ## 2.2 插入模式
 

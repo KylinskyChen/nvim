@@ -27,7 +27,7 @@ set whichwrap+=<,>,h,l   " 设置光标键跨行
 set ttimeoutlen=0        " 设置<ESC>键响应时间
 set virtualedit=block,onemore   " 允许光标出现在最后一个字符的后面
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 代码缩进和排版
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autoindent           " 设置自动缩进
@@ -40,12 +40,12 @@ set tabstop=4            " 设置编辑时制表符占用空格数
 set shiftwidth=4         " 设置格式化时制表符占用空格数
 set softtabstop=4        " 设置4个空格为制表符
 set smarttab             " 在行和段开始处使用制表符
-set nowrap                 " 禁止折行
+set nowrap               " 禁止折行
 set backspace=2          " 使用回车键正常处理indent,eol,start等
 set sidescroll=10        " 设置向右滚动字符数
-set foldenable         " 禁用折叠代码
+set foldenable           " 禁用折叠代码
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 代码补全
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set wildmenu             " vim自身命名行模式智能补全
@@ -117,7 +117,6 @@ Plug 'chxuan/prepare-code'
 Plug 'chxuan/vim-buffer'
 Plug 'KylinskyChen/vimplus-startify'
 Plug 'chxuan/tagbar'
-" Plug 'Valloric/YouCompleteMe'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Yggdroot/LeaderF'
 Plug 'mileszs/ack.vim'
@@ -259,32 +258,32 @@ let g:NERDTreeDirArrowCollapsible='▼'
 " YCM
 " 如果不指定python解释器路径，ycm会自己搜索一个合适的(与编译ycm时使用的python版本匹配)
 " let g:ycm_server_python_interpreter = '/usr/bin/python2.7'
-let g:ycm_confirm_extra_conf = 0 
-let g:ycm_error_symbol = '✗'
-let g:ycm_warning_symbol = '✹'
-let g:ycm_seed_identifiers_with_syntax = 1 
-let g:ycm_complete_in_comments = 1 
-let g:ycm_complete_in_strings = 1 
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_semantic_triggers =  {
-            \   'c' : ['->', '.','re![_a-zA-z0-9]'],
-            \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
-            \             're!\[.*\]\s'],
-            \   'ocaml' : ['.', '#'],
-            \   'cpp,objcpp' : ['->', '.', '::','re![_a-zA-Z0-9]'],
-            \   'perl' : ['->'],
-            \   'php' : ['->', '::'],
-            \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-            \   'ruby' : ['.', '::'],
-            \   'lua' : ['.', ':'],
-            \   'erlang' : [':'],
-            \ }
-nnoremap <leader>u :YcmCompleter GoToDeclaration<cr>
-" 已经使用cpp-mode插件提供的转到函数实现的功能
-" nnoremap <leader>i :YcmCompleter GoToDefinition<cr> 
-nnoremap <leader>o :YcmCompleter GoToInclude<cr>
-nnoremap <leader>ff :YcmCompleter FixIt<cr>
-nmap <F5> :YcmDiags<cr>
+" let g:ycm_confirm_extra_conf = 0 
+" let g:ycm_error_symbol = '✗'
+" let g:ycm_warning_symbol = '✹'
+" let g:ycm_seed_identifiers_with_syntax = 1 
+" let g:ycm_complete_in_comments = 1 
+" let g:ycm_complete_in_strings = 1 
+" let g:ycm_collect_identifiers_from_tags_files = 1
+" let g:ycm_semantic_triggers =  {
+"             \   'c' : ['->', '.','re![_a-zA-z0-9]'],
+"             \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
+"             \             're!\[.*\]\s'],
+"             \   'ocaml' : ['.', '#'],
+"             \   'cpp,objcpp' : ['->', '.', '::','re![_a-zA-Z0-9]'],
+"             \   'perl' : ['->'],
+"             \   'php' : ['->', '::'],
+"             \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
+"             \   'ruby' : ['.', '::'],
+"             \   'lua' : ['.', ':'],
+"             \   'erlang' : [':'],
+"             \ }
+" nnoremap <leader>u :YcmCompleter GoToDeclaration<cr>
+" " 已经使用cpp-mode插件提供的转到函数实现的功能
+" " nnoremap <leader>i :YcmCompleter GoToDefinition<cr> 
+" nnoremap <leader>o :YcmCompleter GoToInclude<cr>
+" nnoremap <leader>ff :YcmCompleter FixIt<cr>
+" nmap <F5> :YcmDiags<cr>
 
 " tagbar
 let g:tagbar_width = 30

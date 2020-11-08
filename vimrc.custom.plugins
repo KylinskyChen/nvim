@@ -24,6 +24,7 @@ Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 " Plug 'vimwiki/vimwiki'
 Plug 'skywind3000/vim-terminal-help'
+Plug 'Yggdroot/indentLine'
 
 " Plug 'ferrine/md-img-paste.vim' 
 " 将剪切板中的图片插入为Markdown 代码
