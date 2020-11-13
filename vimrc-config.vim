@@ -1,18 +1,116 @@
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 用户自定义配置（该文件放一般性配置，可覆盖~/.vimrc里的配置，若要增加、卸载插件，请放入~/.vimrc.custom.plugins）
+" 插件自定义配置；
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" 开启相对行号
-set relativenumber  
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ack
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>F :Ack!<space>
 
-" 开启鼠标
-set mouse=a
-" 设置光标所在列高亮
-" set cursorcolumn
 
-" indentLine 开启代码对齐线
-" let g:indentLine_enabled = 1
+
+" airline
+let g:airline_theme="onedark"
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+
+" cpp-mode
+nnoremap <leader>y :CopyCode<cr>
+nnoremap <leader>p :PasteCode<cr>
+nnoremap <leader>U :GoToFunImpl<cr>
+nnoremap <silent> <leader>a :Switch<cr>
+nnoremap <leader><leader>fp :FormatFunParam<cr>
+nnoremap <leader><leader>if :FormatIf<cr>
+nnoremap <leader><leader>t dd :GenTryCatch<cr>
+xnoremap <leader><leader>t d :GenTryCatch<cr>
+
+" change-colorscheme
+nnoremap <silent> <F9> :PreviousColorScheme<cr>
+inoremap <silent> <F9> <esc> :PreviousColorScheme<cr>
+nnoremap <silent> <F10> :NextColorScheme<cr>
+inoremap <silent> <F10> <esc> :NextColorScheme<cr>
+nnoremap <silent> <F11> :RandomColorScheme<cr>
+inoremap <silent> <F11> <esc> :RandomColorScheme<cr>
+nnoremap <silent> <F12> :ShowColorScheme<cr>
+inoremap <silent> <F12> <esc> :ShowColorScheme<cr>
+
+" prepare-code
+let g:prepare_code_plugin_path = expand($HOME . "/.vim/plugged/prepare-code")
+
+" vim-buffer
+nnoremap <silent> <c-p> :PreviousBuffer<cr>
+nnoremap <silent> <c-n> :NextBuffer<cr>
+nnoremap <silent> <leader>d :CloseBuffer<cr>
+nnoremap <silent> <leader>D :BufOnly<cr>
+
+" vim-edit
+nnoremap Y :CopyText<cr>
+nnoremap D :DeleteText<cr>
+nnoremap C :ChangeText<cr>
+nnoremap <leader>r :ReplaceTo<space>
+
+" nerdtree
+nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+let g:NERDTreeHighlightFolders = 1         
+let g:NERDTreeHighlightFoldersFullName = 1 
+
+" tagbar
+let g:tagbar_width = 30
+nnoremap <silent> <leader>t :TagbarToggle<cr>
+
+" incsearch.vim
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+" vim-easymotion
+let g:EasyMotion_smartcase = 1
+map <leader>w <Plug>(easymotion-bd-w)
+nmap <leader>w <Plug>(easymotion-overwin-w)
+
+" nerdtree-git-plugin
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+            \ "Modified"  : "✹",
+            \ "Staged"    : "✚",
+            \ "Untracked" : "✭",
+            \ "Renamed"   : "➜",
+            \ "Unmerged"  : "═",
+            \ "Deleted"   : "✖",
+            \ "Dirty"     : "✗",
+            \ "Clean"     : "✔︎",
+            \ 'Ignored'   : '☒',
+            \ "Unknown"   : "?"
+            \ }
+
+" echodoc.vim
+let g:echodoc_enable_at_startup = 1
+
+" tabular
+nnoremap <leader>l :Tab /\|<cr>
+nnoremap <leader>= :Tab /=<cr>
+
+" vim-smooth-scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
+" gv
+nnoremap <leader>g :GV<cr>
+nnoremap <leader>G :GV!<cr>
+nnoremap <leader>gg :GV?<cr>
+
 
 " markdown
 " markdown-preview.vim 的配置；
@@ -347,8 +445,8 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
 " 代码格式化；
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
 
 " 折叠配置；
 augroup mygroup
@@ -383,10 +481,10 @@ omap ac <Plug>(coc-classobj-a)
 
 " Remap <C-f> and <C-b> for scroll float windows/popups.
 " Note coc#float#scroll works on neovim >= 0.4.3 or vim >= 8.2.0750
-nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+" nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+" nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+" inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+" inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
 
 " NeoVim-only mapping for visual mode scroll
 " Useful on signatureHelp after jump placeholder of snippet expansion
@@ -416,21 +514,21 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.airline
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" " Manage extensions.
+" nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" " Show commands.
+" nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" " Find symbol of current document.
+" nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" " Search workspace symbols.
+" nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" " Do default action for next item.
+" nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" " Do default action for previous item.
+" nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" " Resume latest coc list.
+" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Yggdroot/indentLine
 let g:indent_guides_guide_size            = 1  " 指定对齐线的尺寸
