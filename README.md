@@ -20,7 +20,9 @@
     * [2.10 实用命令](#210-实用命令)
     * [2.11 帮助](#211-帮助)
     * [2.12 其他](#212-其他)
-* [三、待解决的问题](#三待解决的问题)
+* [三、常规问题](#三常规问题)
+    * [3.1 使用 F7 打开 markdown-preview 没有反应，checkhealth 出现 mkp 报错](#31-使用-f7-打开-markdown-preview-没有反应checkhealth-出现-mkp-报错)
+    * [3.2 无法使用 pip2](#32-无法使用-pip2)
 
 <!-- vim-markdown-toc -->
 
@@ -30,9 +32,6 @@
 sudo apt install yarn
 sudo apt install vim neovim
 pip3 install pynvim
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python2.7 get-pip.py
-python3 get-pip.py
 pip2 install pynvim
 sudo apt install ruby ruby-dev
 gem sources -a https://gems.ruby-china.com
@@ -471,6 +470,143 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `vimdiff file1 file2` | 显示文件差异               |
 | `vim -R filename`     | 以只读方式打开（阅读模式） |
 
-# 三、待解决的问题
+# 三、常规问题
 
+## 3.1 使用 F7 打开 markdown-preview 没有反应，checkhealth 出现 mkp 报错
 
+[ubuntu 18.04 预览 markdown 时没有反应，预览 mermaid 代码块的文件出现报错。#24](https://github.com/iamcco/markdown-preview.nvim/issues/244) 
+
+使用 .nvim 后缀的插件 MarkdownPreview 没有反应、chrome 没有弹出的原因，是由于没有进入插件的 app 界面中运行 `./install.sh` 脚本导致的。
+
+可以使用以下两种方法解决该问题：
+
+1. 使用 iamcco 说明文档中建议的安装方式：
+
+```
+sudo apt install yarn
+```
+
+插件下载之后附上安装方法。
+
+```
+" If you have nodejs and yarn
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+```
+
+2. 直接到插件的目录下运行一下 `install.sh` 脚本，本质上没啥区别。
+
+```
+cd ~/.vim/plugged/markdown-preview.nvim/app/
+./install.sh
+```
+
+最后附上 .vim 和 .nvim 出现冲突的配置部分，如下。
+
+```
+" markdown
+" let g:markdown_preview_sync_google_chrome_path = "/usr/bin/google-chrome"
+" let g:mkdp_path_to_chrome = "google-chrome"
+" " 设置 chrome 浏览器的路径（或是启动 chrome（或其他现代浏览器）的命令）
+" " 如果设置了该参数, g:mkdp_browserfunc 将被忽略
+" let g:mkdp_browserfunc = 'MKDP_browserfunc_default'
+" " vim 回调函数, 参数为要打开的 url
+" let g:mkdp_auto_start = 0
+" " 设置为 1 可以在打开 markdown 文件的时候自动打开浏览器预览，只在打开
+" " markdown 文件的时候打开一次
+" let g:mkdp_auto_open = 1
+" " 设置为 1 在编辑 markdown 的时候检查预览窗口是否已经打开，否则自动打开预
+" " 览窗
+" let g:mkdp_auto_close = 1
+" " 在切换 buffer 的时候自动关闭预览窗口，设置为 0 则在切换 buffer 的时候不
+" " 自动关闭预览窗口
+" let g:mkdp_refresh_slow = 0
+" " 设置为 1 则只有在保存文件，或退出插入模式的时候更新预览，默认为 0，实时
+" " 更新预览
+" let g:mkdp_command_for_global = 0
+" " 设置为 1 则所有文件都可以使用 MarkdownPreview 进行预览，默认只有 markdown
+" " 文件可以使用改命令
+" let g:mkdp_open_to_the_world = 0
+" " 设置为 1, 在使用的网络中的其他计算机也能访问预览页面
+" " 默认只监听本地（127.0.0.1），其他计算机不能访问
+
+" set to 1, nvim will open the preview window after entering the markdown buffer
+" default: 0
+let g:mkdp_auto_start = 0
+" set to 1, the nvim will auto close current preview window when change
+" from markdown buffer to another buffer
+" default: 1
+let g:mkdp_auto_close = 1
+" set to 1, the vim will refresh markdown when save the buffer or
+" leave from insert mode, default 0 is auto refresh markdown as you edit or
+" move the cursor
+" default: 0
+let g:mkdp_refresh_slow = 0
+" set to 1, the MarkdownPreview command can be use for all files,
+" by default it can be use in markdown file
+" default: 0
+let g:mkdp_command_for_global = 0
+" set to 1, preview server available to others in your network
+" by default, the server listens on localhost (127.0.0.1)
+" default: 0
+let g:mkdp_open_to_the_world = 0
+" use custom IP to open preview page
+" useful when you work in remote vim and preview on local browser
+" more detail see: https://github.com/iamcco/markdown-preview.nvim/pull/9
+" default empty
+let g:mkdp_open_ip = ''
+" specify browser to open preview page
+" default: ''
+let g:mkdp_browser = ''
+" set to 1, echo preview page url in command line when open preview page
+" default is 0
+let g:mkdp_echo_preview_url = 0
+" a custom vim function name to open preview page
+" this function will receive url as param
+" default is empty
+let g:mkdp_browserfunc = ''
+" options for markdown render
+" mkit: markdown-it options for render
+" katex: katex options for math
+" uml: markdown-it-plantuml options
+" maid: mermaid options
+" disable_sync_scroll: if disable sync scroll, default 0
+" sync_scroll_type: 'middle', 'top' or 'relative', default value is 'middle'
+"   middle: mean the cursor position alway show at the middle of the preview page
+"   top: mean the vim top viewport alway show at the top of the preview page
+"   relative: mean the cursor position alway show at the relative positon of the preview page
+" hide_yaml_meta: if hide yaml metadata, default is 1
+" sequence_diagrams: js-sequence-diagrams options
+" content_editable: if enable content editable for preview page, default: v:false
+" disable_filename: if disable filename header for preview page, default: 0
+let g:mkdp_preview_options = {
+    \ 'mkit': {},
+    \ 'katex': {},
+    \ 'uml': {},
+    \ 'maid': {},
+    \ 'disable_sync_scroll': 0,
+    \ 'sync_scroll_type': 'middle',
+    \ 'hide_yaml_meta': 1,
+    \ 'sequence_diagrams': {},
+    \ 'flowchart_diagrams': {},
+    \ 'content_editable': v:false,
+    \ 'disable_filename': 0
+    \ }
+" use a custom markdown style must be absolute path
+" like '/Users/username/markdown.css' or expand('~/markdown.css')
+let g:mkdp_markdown_css = ''
+" use a custom highlight style must absolute path
+" like '/Users/username/highlight.css' or expand('~/highlight.css')
+let g:mkdp_highlight_css = ''
+" use a custom port to start server or random for empty
+let g:mkdp_port = ''
+" preview page title
+" ${name} will be replace with the file name
+let g:mkdp_page_title = '「${name}」'
+```
+
+## 3.2 无法使用 pip2
+
+```bash
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python2.7 get-pip.py
+```
