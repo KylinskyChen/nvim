@@ -21,31 +21,34 @@ Plug 'KylinskyChen/vimplus-startify'                " neovim 的主界面；
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " coc 插件系统；
 
-Plug 'junegunn/fzf'                                 " 用于检索文件的工具；
 Plug 'mileszs/ack.vim'                              " 并行于系统命令 grep 的搜索命令；
+Plug 'junegunn/fzf'                                 " 用于检索文件的工具；
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }   " 检索工具；
+Plug 'haya14busa/incsearch.vim'                     " 文本内快速检索工具；
 
-Plug 'chxuan/cpp-mode'
-Plug 'chxuan/vim-edit'
-Plug 'chxuan/change-colorscheme'
-Plug 'chxuan/prepare-code'
-Plug 'chxuan/vim-buffer'
-Plug 'chxuan/tagbar'
+Plug 'vim-airline/vim-airline'                      " 底部状态条； 
+Plug 'vim-airline/vim-airline-themes'               " 底部状态条的主题；
+Plug 'chxuan/change-colorscheme'                    " 主题切换；
+
+Plug 'chxuan/vim-edit'                              " vim 编辑；
+Plug 'chxuan/cpp-mode'                              " 代码编辑工具；
+Plug 'chxuan/prepare-code'                          " 预定义代码片段；
+Plug 'chxuan/vim-buffer'                            " 缓冲区；
+Plug 'scrooloose/nerdtree'                          " 目录树；
+Plug 'Xuyuanp/nerdtree-git-plugin'                  " 目录树 git 插件；
+Plug 'chxuan/tagbar'                                " 函数列表；
+Plug 'godlygeek/tabular'                            " 对齐插件；
+
+
 Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/incsearch.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-endwise'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/vim-slash'
 Plug 'junegunn/gv.vim'

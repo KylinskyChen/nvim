@@ -4,13 +4,121 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ack
+" coc 插件系统； 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 安装 coc 插件； 
+let g:coc_global_extensions = [
+    \ 'coc-marketplace',
+	\ 'coc-actions',
+	\ 'coc-css',
+	\ 'coc-diagnostic',
+	\ 'coc-explorer',
+	\ 'coc-flutter-tools',
+	\ 'coc-gitignore',
+	\ 'coc-html',
+	\ 'coc-json',
+	\ 'coc-lists',
+	\ 'coc-prettier',
+	\ 'coc-python',
+	\ 'coc-snippets',
+	\ 'coc-sourcekit',
+	\ 'coc-stylelint',
+	\ 'coc-syntax',
+	\ 'coc-tasks',
+	\ 'coc-todolist',
+	\ 'coc-translator',
+	\ 'coc-tslint-plugin',
+	\ 'coc-tsserver',
+	\ 'coc-vimlsp',
+	\ 'coc-vetur',
+	\ 'coc-yaml',
+	\ 'coc-yank',
+	\ 'coc-cmake'
+	\ ]
+
+set hidden
+set updatetime=1000
+set shortmess+=c
+
+if has("patch-8.1.1564")
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+" TAB 补全功能；
+inoremap <silent><expr> <TAB> 
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" ctrl + 空格调出自动补全；
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" 查找上下一个报错；
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" 查看调用关系；
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" 查看文档说明；
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" 光标处单词高亮；
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" 当前变量重命名；
+nmap <leader>rn <Plug>(coc-rename)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ack 全局文本搜索；
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>F :Ack!<space>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf 文件检索；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :FZF 唤起；
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" LeaderF 检索工具；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 快捷键 <leader>f 直接唤起；
 
-" airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" incsearch 检索工具；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" airline 底部状态条；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme="onedark"
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -22,7 +130,30 @@ let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 
-" cpp-mode
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" change-colorscheme 页面主题；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <F9> :PreviousColorScheme<cr>
+inoremap <silent> <F9> <esc> :PreviousColorScheme<cr>
+nnoremap <silent> <F10> :NextColorScheme<cr>
+inoremap <silent> <F10> <esc> :NextColorScheme<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" prepare-code 预定义代码片段；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:prepare_code_plugin_path = expand($HOME . "/.vim/plugged/prepare-code")
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-edit 文本编辑工具；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap Y :CopyText<cr>
+nnoremap D :DeleteText<cr>
+nnoremap C :ChangeText<cr>
+nnoremap <leader>r :ReplaceTo<space>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" cpp-mode 代码编辑工具；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>y :CopyCode<cr>
 nnoremap <leader>p :PasteCode<cr>
 nnoremap <leader>U :GoToFunImpl<cr>
@@ -32,32 +163,17 @@ nnoremap <leader><leader>if :FormatIf<cr>
 nnoremap <leader><leader>t dd :GenTryCatch<cr>
 xnoremap <leader><leader>t d :GenTryCatch<cr>
 
-" change-colorscheme
-nnoremap <silent> <F9> :PreviousColorScheme<cr>
-inoremap <silent> <F9> <esc> :PreviousColorScheme<cr>
-nnoremap <silent> <F10> :NextColorScheme<cr>
-inoremap <silent> <F10> <esc> :NextColorScheme<cr>
-nnoremap <silent> <F11> :RandomColorScheme<cr>
-inoremap <silent> <F11> <esc> :RandomColorScheme<cr>
-nnoremap <silent> <F12> :ShowColorScheme<cr>
-inoremap <silent> <F12> <esc> :ShowColorScheme<cr>
-
-" prepare-code
-let g:prepare_code_plugin_path = expand($HOME . "/.vim/plugged/prepare-code")
-
-" vim-buffer
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-buffer 缓冲区；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <c-p> :PreviousBuffer<cr>
 nnoremap <silent> <c-n> :NextBuffer<cr>
 nnoremap <silent> <leader>d :CloseBuffer<cr>
 nnoremap <silent> <leader>D :BufOnly<cr>
 
-" vim-edit
-nnoremap Y :CopyText<cr>
-nnoremap D :DeleteText<cr>
-nnoremap C :ChangeText<cr>
-nnoremap <leader>r :ReplaceTo<space>
-
-" nerdtree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" nerdtree 目录树；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader>n :NERDTreeToggle<cr>
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
@@ -65,21 +181,9 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1         
 let g:NERDTreeHighlightFoldersFullName = 1 
 
-" tagbar
-let g:tagbar_width = 30
-nnoremap <silent> <leader>t :TagbarToggle<cr>
-
-" incsearch.vim
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-" vim-easymotion
-let g:EasyMotion_smartcase = 1
-map <leader>w <Plug>(easymotion-bd-w)
-nmap <leader>w <Plug>(easymotion-overwin-w)
-
-" nerdtree-git-plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" nerdtree-git-plugin 目录树 git 插件；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeGitStatusIndicatorMapCustom = {
             \ "Modified"  : "✹",
             \ "Staged"    : "✚",
@@ -93,12 +197,38 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
             \ "Unknown"   : "?"
             \ }
 
-" echodoc.vim
-let g:echodoc_enable_at_startup = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tagbar 函数列表；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:tagbar_width = 30
+nnoremap <silent> <leader>t :TagbarToggle<cr>
 
-" tabular
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tabular 自动对齐的插件；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>l :Tab /\|<cr>
 nnoremap <leader>= :Tab /=<cr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+" vim-easymotion
+let g:EasyMotion_smartcase = 1
+map <leader>w <Plug>(easymotion-bd-w)
+nmap <leader>w <Plug>(easymotion-overwin-w)
+
+" echodoc.vim
+let g:echodoc_enable_at_startup = 1
 
 " vim-smooth-scroll
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
@@ -110,7 +240,6 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 nnoremap <leader>g :GV<cr>
 nnoremap <leader>G :GV!<cr>
 nnoremap <leader>gg :GV?<cr>
-
 
 " markdown
 " markdown-preview.vim 的配置；
@@ -333,202 +462,6 @@ let g:previm_open_cmd = 'google-chrome'
 " let g:vimwiki_list = [{'path': '~/wiki/test/', 'syntax': 'markdown', 'ext': '.md', 'auto_toc': 0, 'auto_tags': 0}]
 " 插入目录；
 " map <F5> :VimwikiTOC<CR>
-
-" 终端快捷键；
-" ^[ 代表 Alt 键；
-" 当前窗口下面新开一个终端窗口；
-noremap <M-d> :sp<cr>:terminal<cr>i
-" 当前窗口左侧新开一个终端窗口；
-noremap <M-l> :vsp<cr>:terminal<cr>i
-" 当前窗口上面新开一个终端窗口；
-noremap <M-u> :sp<cr><c-w>k:terminal<cr>i
-" 当前窗口右侧新开一个终端窗口；
-noremap <M-r> :vsp<cr><c-w>r:terminal<cr>i
-
-" coc
-let g:coc_global_extensions = [
-    \ 'coc-marketplace',
-	\ 'coc-actions',
-	\ 'coc-css',
-	\ 'coc-diagnostic',
-	\ 'coc-explorer',
-	\ 'coc-flutter-tools',
-	\ 'coc-gitignore',
-	\ 'coc-html',
-	\ 'coc-json',
-	\ 'coc-lists',
-	\ 'coc-prettier',
-	\ 'coc-python',
-	\ 'coc-snippets',
-	\ 'coc-sourcekit',
-	\ 'coc-stylelint',
-	\ 'coc-syntax',
-	\ 'coc-tasks',
-	\ 'coc-todolist',
-	\ 'coc-translator',
-	\ 'coc-tslint-plugin',
-	\ 'coc-tsserver',
-	\ 'coc-vimlsp',
-	\ 'coc-vetur',
-	\ 'coc-yaml',
-	\ 'coc-yank',
-	\ 'coc-cmake'
-	\ ]
-
-set hidden
-set updatetime=1000
-set shortmess+=c
-
-if has("patch-8.1.1564")
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-" TAB 补全功能；
-inoremap <silent><expr> <TAB> 
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-" ctrl + 空格调出自动补全；
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-" 查找上下一个报错；
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-" 查看调用关系；
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window.
-" 查看文档说明；
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-" 光标处单词高亮；
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Symbol renaming.
-" 当前变量重命名；
-nmap <leader>rn <Plug>(coc-rename)
-
-" Formatting selected code.
-" 代码格式化；
-" xmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
-
-" 折叠配置；
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-" 选中代码右键选项；
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Map function and class text objects
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-omap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap af <Plug>(coc-funcobj-a)
-xmap ic <Plug>(coc-classobj-i)
-omap ic <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
-
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-" Note coc#float#scroll works on neovim >= 0.4.3 or vim >= 8.2.0750
-" nnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-" nnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-" inoremap <nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-" inoremap <nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-
-" NeoVim-only mapping for visual mode scroll
-" Useful on signatureHelp after jump placeholder of snippet expansion
-if has('nvim')
-  vnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#nvim_scroll(1, 1) : "\<C-f>"
-  vnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#nvim_scroll(0, 1) : "\<C-b>"
-endif
-
-" Use CTRL-S for selections ranges.
-" Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
-
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Mappings for CoCList
-" Show all diagnostics.airline
-" nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" " Manage extensions.
-" nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-" " Show commands.
-" nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
-" " Find symbol of current document.
-" nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" " Search workspace symbols.
-" nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
-" " Do default action for next item.
-" nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" " Do default action for previous item.
-" nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" " Resume latest coc list.
-" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Yggdroot/indentLine
 let g:indent_guides_guide_size            = 1  " 指定对齐线的尺寸
