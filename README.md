@@ -23,6 +23,7 @@
 * [三、常规问题](#三常规问题)
     * [3.1 使用 F7 打开 markdown-preview 没有反应，checkhealth 出现 mkp 报错](#31-使用-f7-打开-markdown-preview-没有反应checkhealth-出现-mkp-报错)
     * [3.2 无法使用 pip2](#32-无法使用-pip2)
+    * [3.3 将 neovim 设置为系统默认的编辑器](#33-将-neovim-设置为系统默认的编辑器)
 
 <!-- vim-markdown-toc -->
 
@@ -609,4 +610,14 @@ let g:mkdp_page_title = '「${name}」'
 ```bash
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python2.7 get-pip.py
+```
+
+## 3.3 将 neovim 设置为系统默认的编辑器
+
+[将ranger的默认编辑器配置成neovim](https://blog.csdn.net/zmhzmhzm/article/details/106765480) 
+
+修改一下 `~/.bashrc` 或者 `/etc/profile` 在其中将系统的 `EDITOR` 变量的值改一下即可。
+
+```bash
+export EDITOR=nvim
 ```
