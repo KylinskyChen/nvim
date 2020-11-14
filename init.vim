@@ -26,6 +26,7 @@ set ttimeoutlen=0                   " 设置 <ESC> 键响应时间；
 set virtualedit=block,onemore       " 允许光标出现在最后一个字符的后面；
 set mouse=a                         " 开启鼠标；
 set relativenumber                  " 开启相对行号；
+set clipboard=unnamedplus           " 默认复制到系统剪切板；
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 代码缩进和排版
@@ -132,6 +133,29 @@ nnoremap <leader>h :edit ~/.config/nvim/README.md<cr>
 nnoremap <leader><leader>i :PlugInstall<cr>
 nnoremap <leader><leader>u :PlugUpdate<cr>
 nnoremap <leader><leader>c :PlugClean<cr>
+
+" markdown 快捷键组；
+autocmd Filetype markdown inoremap ,f <Esc>/<++><CR>:nohlsearch<CR>c4l
+autocmd Filetype markdown inoremap ,n ---<Enter><Enter>
+autocmd Filetype markdown inoremap ,b **** <++><Esc>F*hi
+autocmd Filetype markdown inoremap ,s ~~~~ <++><Esc>F~hi
+autocmd Filetype markdown inoremap ,i ** <++><Esc>F*i
+autocmd Filetype markdown inoremap ,d `` <++><Esc>F`i
+autocmd Filetype markdown inoremap ,c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
+autocmd Filetype markdown inoremap ,p <div align=center>![](<++>)<div align=left> <++><Esc>F[a
+autocmd Filetype markdown inoremap ,pc <div align=center><div align=left> <++><Esc>F>a
+autocmd Filetype markdown inoremap ,h ===============<Enter>
+autocmd Filetype markdown inoremap ,a [](<++>) <++><Esc>F[a
+autocmd Filetype markdown inoremap ,1 #<Space><Enter><++><Esc>kA
+autocmd Filetype markdown inoremap ,2 ##<Space><Enter><++><Esc>kA
+autocmd Filetype markdown inoremap ,3 ###<Space><Enter><++><Esc>kA
+autocmd Filetype markdown inoremap ,4 ####<Space><Enter><++><Esc>kA
+autocmd Filetype markdown inoremap ,l --------<Enter>
+autocmd Filetype markdown inoremap ,cc /**/<++><Esc>F*i
+autocmd Filetype markdown inoremap ,zz ><space>作者：解琛<Enter><Enter>><space>时间：
+
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 继承自 vim 经典接口的一些功能封装

@@ -209,6 +209,51 @@ nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <leader>l :Tab /\|<cr>
 nnoremap <leader>= :Tab /=<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gv 快速查看 git 仓库；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>g :GV<cr>
+nnoremap <leader>G :GV!<cr>
+nnoremap <leader>gg :GV?<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Table-mode markdown 表格支持；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:table_mode_corner = '|'
+let g:table_mode_border=0
+let g:table_mode_fillchar=' '
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MouseType 修改鼠标类型；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[5 q" "SR = REPLACE mode
+let &t_EI.="\e[5 q" "EI = NORMAL mode (ELSE)
+
+"Cursor settings:
+"  1 -> blinking block
+"  2 -> solid block
+"  3 -> blinking underscore
+"  4 -> solid underscore
+"  5 -> blinking vertical bar
+"  6 -> solid vertical bar
+"let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+"let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" 消除鼠标滚动时的抖动；
+" noremap <ScrollWheelDown><ScrollWheelUp> <ScrollWheelDown>
+" noremap <ScrollWheelUp><ScrollWheelUp> <ScrollWheelUp>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-markdown-toc 目录配置；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <F5> :GenTocGFM<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto-save
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:auto_save = 1  " enable AutoSave on Vim echodoc_enable_at_startup
 
 
 
@@ -219,27 +264,15 @@ nnoremap <leader>= :Tab /=<cr>
 
 
 
-
-
-
-" vim-easymotion
-let g:EasyMotion_smartcase = 1
-map <leader>w <Plug>(easymotion-bd-w)
-nmap <leader>w <Plug>(easymotion-overwin-w)
 
 " echodoc.vim
-let g:echodoc_enable_at_startup = 1
+let g:echodoc_enable_at_startup = 1 
 
 " vim-smooth-scroll
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
-
-" gv
-nnoremap <leader>g :GV<cr>
-nnoremap <leader>G :GV!<cr>
-nnoremap <leader>gg :GV?<cr>
 
 " markdown
 " markdown-preview.vim 的配置；
@@ -351,24 +384,6 @@ imap <silent> <F8> <Plug>StopMarkdownPreview
 let g:mkdp_brower = 'google-chrome'
 autocmd Filetype markdown noremap ,m :MarkdownPreview<CR>
 autocmd Filetype markdown noremap ,ms :MarkdownPreviewStop<CR>
-map<F2> :NERDTreeToggle<CR>
-
-" " Doxygen
-" let g:DoxygenToolkit_authorName="chxuan, 787280310@qq.com"
-" let g:DoxygenToolkit_authorName="chxuan, 787280310@qq.com"
-" let s:licenseTag = "Copyrigtt(C)\<enter>"
-" let s:licenseTag = "Copyrigtt(C)\<enter>"
-" let s:licenseTag = s:licenseTag . "For free\<enter>"
-" let s:licenseTag = s:licenseTag . "All right reserved\<enter>"
-" let g:DoxygenToolkit_licenseTag = s:licenseTag
-" let g:DoxygenToolkit_briefTag_funcName="yes"
-" let g:doxygen_enhanced_color=1
-" let g:DoxygenToolkit_commentType="Qt"
-
-" Table-mode
-let g:table_mode_corner = '|'
-let g:table_mode_border=0
-let g:table_mode_fillchar=' '
 
 function! s:isAtStartOfLine(mapping)
   let text_before_cursor = getline('.')[0 : col('.')-1]
@@ -384,25 +399,6 @@ inoreabbrev <expr> __
           \ <SID>isAtStartOfLine('__') ?
           \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
-" Auto-save
-let g:auto_save = 1  " enable AutoSave on Vim echodoc_enable_at_startup
-
-" MouseType
-let &t_SI.="\e[5 q" "SI = INSERT mode
-let &t_SR.="\e[5 q" "SR = REPLACE mode
-let &t_EI.="\e[5 q" "EI = NORMAL mode (ELSE)
-
-"Cursor settings:
-"  1 -> blinking block
-"  2 -> solid block
-"  3 -> blinking underscore
-"  4 -> solid underscore
-"  5 -> blinking vertical bar
-"  6 -> solid vertical bar
-"let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-"let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-"let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
 " vim + latex
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -410,48 +406,9 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-" ultisnips
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
 " 格式化 Json 文件
 map <F4><Esc>:%!python -m json.tool<CR>
 
-" 默认复制到系统剪切板；
-set clipboard=unnamedplus
-
-" 消除鼠标滚动时的抖动；
-" noremap <ScrollWheelDown><ScrollWheelUp> <ScrollWheelDown>
-" noremap <ScrollWheelUp><ScrollWheelUp> <ScrollWheelUp>
-
-" markdown 目录配置；
-map <F5> :GenTocGFM<CR>
-
-" 快捷键；
-"autocmd Filetype markdown map <leader>w yiWi[<esc>Ea](<esc>pa)
-autocmd Filetype markdown inoremap ,f <Esc>/<++><CR>:nohlsearch<CR>c4l
-autocmd Filetype markdown inoremap ,n ---<Enter><Enter>
-autocmd Filetype markdown inoremap ,b **** <++><Esc>F*hi
-autocmd Filetype markdown inoremap ,s ~~~~ <++><Esc>F~hi
-autocmd Filetype markdown inoremap ,i ** <++><Esc>F*i
-autocmd Filetype markdown inoremap ,d `` <++><Esc>F`i
-autocmd Filetype markdown inoremap ,c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
-autocmd Filetype markdown inoremap ,p <div align=center>![](<++>)<div align=left> <++><Esc>F[a
-autocmd Filetype markdown inoremap ,pc <div align=center><div align=left> <++><Esc>F>a
-" autocmd Filetype markdown inoremap ,h ===============<Enter><Esc>F=hi
-autocmd Filetype markdown inoremap ,h ===============<Enter>
-autocmd Filetype markdown inoremap ,a [](<++>) <++><Esc>F[a
-autocmd Filetype markdown inoremap ,1 #<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap ,2 ##<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap ,3 ###<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap ,4 ####<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap ,l --------<Enter>
-autocmd Filetype markdown inoremap ,cc /**/<++><Esc>F*i
-autocmd Filetype markdown inoremap ,zz ><space>作者：解琛<Enter><Enter>><space>时间：2020 年 8 月<space>
 
 let g:previm_open_cmd = 'google-chrome'
 
@@ -467,5 +424,3 @@ let g:previm_open_cmd = 'google-chrome'
 let g:indent_guides_guide_size            = 1  " 指定对齐线的尺寸
 let g:indent_guides_start_level           = 2  " 从第二层开始可视化显示缩进
 
-" coc
-" let g:coc_disable_startup_warning = 1

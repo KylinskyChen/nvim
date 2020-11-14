@@ -224,19 +224,19 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 |-------------|----------------------|
 | `<leader>F` | 搜索当前目录下的文本 |
 
-### 2.3.2 [junegunn/fzf](https://github.com/junegunn/fzf)
+### 2.3.3 [junegunn/fzf](https://github.com/junegunn/fzf)
 
 | 快捷键 | 说明                |
 |--------|---------------------|
 | `:FZF` | 使用 fzf 开始搜索； |
 
-### 2.3.3 [Yggdroot/LeaderF](https://github.com/Yggdroot/LeaderF)
+### 2.3.4 [Yggdroot/LeaderF](https://github.com/Yggdroot/LeaderF)
 
 | 快捷键      | 说明                  |
 |-------------|-----------------------|
 | `<leader>f` | 搜索 ~ 目录下的文件； |
 
-### 2.3.4 [haya14busa/incsearch.vim](https://github.com/haya14busa/incsearch.vim) 
+### 2.3.5 [haya14busa/incsearch.vim](https://github.com/haya14busa/incsearch.vim) 
 
 | 快捷键     | 说明                           |
 |------------|--------------------------------|
@@ -247,14 +247,14 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `*`        | 向前搜索光标下的单词；         |
 | `#`        | 向后搜索光标下的单词；         |
 
-### 2.3.5 [chxuan/change-colorscheme](https://github.com/chxuan/change-colorscheme) 
+### 2.3.6 [chxuan/change-colorscheme](https://github.com/chxuan/change-colorscheme) 
 
 | 快捷键  | 说明           |
 |---------|----------------|
 | `<F9>`  | 显示上一主题； |
 | `<F10>` | 显示下一主题； |
 
-### 2.3. [chxuan/vim-edit](https://github.com/chxuan/vim-edit) 
+### 2.3.7 [chxuan/vim-edit](https://github.com/chxuan/vim-edit) 
 
 | 快捷键      | 说明                         |
 |-------------|------------------------------|
@@ -275,16 +275,13 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `<leader>y`    | 拷贝函数声明；                           |
 | `<leader>p`    | 生成函数实现；                           |
 | `<leader>w`    | 单词跳转；                               |
-| `<leader>g`    | 显示 git 仓库提交记录；                  |
-| `<leader>G`    | 显示当前文件提交记录；                   |
-| `<leader>gg`   | 显示当前文件在某个 commit 下的完整内容； |
 | `<leader>ff`   | 语法错误自动修复（FixIt）；              |
 | `<leader>fp`   | 格式化函数参数；                         |
 | `<leader>if`   | 格式化 if；                              |
 | `<leader>t dd` | 生成 try-catch 代码块；                  |
 | `<leader>t d`  | 生成 try-catch 代码块；                  |
 
-### 2.3. [chxuan/vim-buffer](https://github.com/chxuan/vim-buffer) 
+### 2.3.8 [chxuan/vim-buffer](https://github.com/chxuan/vim-buffer) 
 
 | 快捷键      | 说明                         |
 |-------------|------------------------------|
@@ -293,29 +290,40 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `<leader>d` | 删除当前buffer               |
 | `<leader>D` | 删除当前buffer外的所有buffer |
 
-### 2.3. [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) 
+### 2.3.9 [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) 
 
 | 快捷键              | 说明                                      |
 |---------------------|-------------------------------------------|
 | `<leader>n`         | 打开/关闭代码资源管理器                   |
 
-### 2.3. [chxuan/tagbar](https://github.com/chxuan/tagbar) 
+### 2.3.10 [chxuan/tagbar](https://github.com/chxuan/tagbar) 
 
 | 快捷键              | 说明                                      |
 |---------------------|-------------------------------------------|
 | `<leader>t`         | 打开/关闭函数列表                         |
 
-### 2.3. [chxuan/tagbar](https://github.com/chxuan/tagbar) 
+### 2.3.11 [chxuan/tagbar](https://github.com/chxuan/tagbar) 
 
 | 快捷键              | 说明                                      |
 |---------------------|-------------------------------------------|
 | `<leader>l`         | 按竖线对齐                                |
 | `<leader>=`         | 按等号对齐                                |
 
+### 2.3.12 [junegunn/gv.vim](https://github.com/junegunn/gv.vim) 
+ 
+| 快捷键       | 说明                                     |
+|--------------|------------------------------------------|
+| `<leader>g`  | 显示 git 仓库提交记录；                  |
+| `<leader>G`  | 显示当前文件提交记录；                   |
+| `<leader>gg` | 显示当前文件在某个 commit 下的完整内容； |
+
+### 2.3.13 [mzlogin/vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc) 
+ 
+| 快捷键 | 说明     |
+|--------|----------|
+| `F5`   | 插入目录 |
 
 
-### 2.3. [](https://github.com/) 
-### 2.3. [](https://github.com/) 
 ### 2.3. [](https://github.com/) 
 ### 2.3. [](https://github.com/) 
 
@@ -369,7 +377,6 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `F7`                | 开启 Markdown 预览                        |
 | `F8`                | 关闭 Markdown 预览                        |
 | `F4`                | 格式化 Json 文件                          |
-| `F5`                | 插入目录                                  |
 | `zf`                | 折叠选中代码；                            |
 | `za`                | 展开、折叠代码；                          |
 | `zo`                | 打开当前折叠；                            |

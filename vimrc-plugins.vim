@@ -35,41 +35,39 @@ Plug 'chxuan/cpp-mode'                              " 代码编辑工具；
 Plug 'chxuan/prepare-code'                          " 预定义代码片段；
 Plug 'chxuan/vim-buffer'                            " 缓冲区；
 Plug 'scrooloose/nerdtree'                          " 目录树；
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      " 目录树高亮插件；
 Plug 'Xuyuanp/nerdtree-git-plugin'                  " 目录树 git 插件；
 Plug 'chxuan/tagbar'                                " 函数列表；
 Plug 'godlygeek/tabular'                            " 对齐插件；
+Plug 'junegunn/gv.vim'                              " 查看 git 仓库；
+Plug '907th/vim-auto-save'                          " 自动保存；
 
-
-Plug 'easymotion/vim-easymotion'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-endwise'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/vim-slash'
-Plug 'junegunn/gv.vim'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-indent'
-Plug 'kana/vim-textobj-syntax'
-Plug 'kana/vim-textobj-function'
-Plug 'sgur/vim-textobj-parameter'
-Plug 'Shougo/echodoc.vim'
-Plug 'terryma/vim-smooth-scroll'
-Plug 'rhysd/clever-f.vim'
-Plug 'vim-scripts/indentpython.vim'
-
-Plug 'dhruvasagar/vim-table-mode'
-Plug '907th/vim-auto-save'
-Plug 'lervag/vimtex'
-Plug 'sirver/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'mzlogin/vim-markdown-toc'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/mathjax-support-for-mkdp'              " markdown 公式编辑；
+Plug 'dhruvasagar/vim-table-mode'                   " 表格模式支持；
+Plug 'mzlogin/vim-markdown-toc'                     " markdown 目录； 
+
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-repeat'
+" Plug 'tpope/vim-endwise'
+" Plug 'octol/vim-cpp-enhanced-highlight'
+" Plug 'ryanoasis/vim-devicons'
+" Plug 'junegunn/vim-slash'
+" Plug 'kana/vim-textobj-user'
+" Plug 'kana/vim-textobj-indent'
+" Plug 'kana/vim-textobj-syntax'
+" Plug 'kana/vim-textobj-function'
+" Plug 'sgur/vim-textobj-parameter'
+" Plug 'Shougo/echodoc.vim'
+" Plug 'terryma/vim-smooth-scroll'
+" Plug 'rhysd/clever-f.vim'
+" Plug 'vim-scripts/indentpython.vim'
+" Plug 'lervag/vimtex'
+" Plug 'sirver/ultisnips'
+" Plug 'honza/vim-snippets'
 Plug 'Yggdroot/indentLine'
 
 " 卸载/禁用插件；
