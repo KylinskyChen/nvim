@@ -251,57 +251,28 @@ let &t_EI.="\e[5 q" "EI = NORMAL mode (ELSE)
 map <F5> :GenTocGFM<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Auto-save
+" Auto-save 自动保存； 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:auto_save = 1  " enable AutoSave on Vim echodoc_enable_at_startup
 
-
-
-
-
-
-
-
-
-
-
-" echodoc.vim
-let g:echodoc_enable_at_startup = 1 
-
-" vim-smooth-scroll
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-smooth-scroll 上下流畅滚动；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
-" markdown
-" markdown-preview.vim 的配置；
-" let g:markdown_preview_sync_google_chrome_path = "/usr/bin/google-chrome"
-" let g:mkdp_path_to_chrome = "google-chrome"
-" " 设置 chrome 浏览器的路径（或是启动 chrome（或其他现代浏览器）的命令）
-" " 如果设置了该参数, g:mkdp_browserfunc 将被忽略
-" let g:mkdp_browserfunc = 'MKDP_browserfunc_default'
-" " vim 回调函数, 参数为要打开的 url
-" let g:mkdp_auto_start = 0
-" " 设置为 1 可以在打开 markdown 文件的时候自动打开浏览器预览，只在打开
-" " markdown 文件的时候打开一次
-" let g:mkdp_auto_open = 1
-" " 设置为 1 在编辑 markdown 的时候检查预览窗口是否已经打开，否则自动打开预
-" " 览窗
-" let g:mkdp_auto_close = 1
-" " 在切换 buffer 的时候自动关闭预览窗口，设置为 0 则在切换 buffer 的时候不
-" " 自动关闭预览窗口
-" let g:mkdp_refresh_slow = 0
-" " 设置为 1 则只有在保存文件，或退出插入模式的时候更新预览，默认为 0，实时
-" " 更新预览
-" let g:mkdp_command_for_global = 0
-" " 设置为 1 则所有文件都可以使用 MarkdownPreview 进行预览，默认只有 markdown
-" " 文件可以使用改命令
-" let g:mkdp_open_to_the_world = 0
-" " 设置为 1, 在使用的网络中的其他计算机也能访问预览页面
-" " 默认只监听本地（127.0.0.1），其他计算机不能访问
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Yggdroot/indentLine 可视化缩进；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indent_guides_guide_size            = 1  " 指定对齐线的尺寸；
+let g:indent_guides_start_level           = 2  " 从第二层开始可视化显示缩进；
 
-" markdown-preview.nvim 的配置；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" markdown-preview.nvim markdown 快速预览；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:mkdp_brower = 'google-chrome'     " 设置哪种浏览器打开 markdown 预览；
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
 let g:mkdp_auto_start = 0
@@ -317,7 +288,7 @@ let g:mkdp_refresh_slow = 0
 " set to 1, the MarkdownPreview command can be use for all files,
 " by default it can be use in markdown file
 " default: 0
-let g:mkdp_command_for_global = 0
+let g:mkdp_command_for_global = 1
 " set to 1, preview server available to others in your network
 " by default, the server listens on localhost (127.0.0.1)
 " default: 0
@@ -381,10 +352,6 @@ imap <silent> <F7> <Plug>MarkdownPreview
 nmap <silent> <F8> <Plug>StopMarkdownPreview
 imap <silent> <F8> <Plug>StopMarkdownPreview
 
-let g:mkdp_brower = 'google-chrome'
-autocmd Filetype markdown noremap ,m :MarkdownPreview<CR>
-autocmd Filetype markdown noremap ,ms :MarkdownPreviewStop<CR>
-
 function! s:isAtStartOfLine(mapping)
   let text_before_cursor = getline('.')[0 : col('.')-1]
   let mapping_pattern = '\V' . escape(a:mapping, '\')
@@ -399,28 +366,29 @@ inoreabbrev <expr> __
           \ <SID>isAtStartOfLine('__') ?
           \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vimwiki
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:vimwiki_list = [{'path': '~/wiki/test/', 'syntax': 'markdown', 'ext': '.md', 'auto_toc': 0, 'auto_tags': 0}]
+" 插入目录；
+" map <F5> :VimwikiTOC<CR>
+
+
+
+
+
+
+
+
+
+
+" echodoc.vim
+let g:echodoc_enable_at_startup = 1 
+
 " vim + latex
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
-
-" 格式化 Json 文件
-map <F4><Esc>:%!python -m json.tool<CR>
-
-
-let g:previm_open_cmd = 'google-chrome'
-
-" nmap <silent> <F7> <Plug>PrevimOpen<CR>
-" imap <silent> <F7> <Plug>PrevimOpen<CR>
-
-" vimwiki
-" let g:vimwiki_list = [{'path': '~/wiki/test/', 'syntax': 'markdown', 'ext': '.md', 'auto_toc': 0, 'auto_tags': 0}]
-" 插入目录；
-" map <F5> :VimwikiTOC<CR>
-
-" Yggdroot/indentLine
-let g:indent_guides_guide_size            = 1  " 指定对齐线的尺寸
-let g:indent_guides_start_level           = 2  " 从第二层开始可视化显示缩进
 

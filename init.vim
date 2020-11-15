@@ -154,6 +154,8 @@ autocmd Filetype markdown inoremap ,l --------<Enter>
 autocmd Filetype markdown inoremap ,cc /**/<++><Esc>F*i
 autocmd Filetype markdown inoremap ,zz ><space>作者：解琛<Enter><Enter>><space>时间：
 
+" 格式化 Json 文件
+map <F4><Esc>:%!python -m json.tool<CR>
 
 
 
