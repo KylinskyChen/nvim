@@ -18,6 +18,7 @@ Plug 'junegunn/fzf'                                 " 用于检索文件的工�
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }   " 检索工具；
 Plug 'haya14busa/incsearch.vim'                     " 文本内快速检索工具；
 Plug 'junegunn/vim-slash'                           " 优化搜索体验； 
+Plug 'rhysd/clever-f.vim'                           " 提升 f 和 F 的检索体验感；
 
 Plug 'vim-airline/vim-airline'                      " 底部状态条； 
 Plug 'vim-airline/vim-airline-themes'               " 底部状态条的主题；
@@ -44,7 +45,6 @@ Plug 'jiangmiao/auto-pairs'                         " 括号自动管理；
 Plug 'tpope/vim-surround'                           " 快速修改对称的符号；
 Plug 'tpope/vim-commentary'                         " 快速注释；
 
-
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'iamcco/mathjax-support-for-mkdp'              " markdown 公式编辑；
 Plug 'dhruvasagar/vim-table-mode'                   " 表格模式支持；
@@ -57,18 +57,15 @@ Plug 'mzlogin/vim-markdown-toc'                     " markdown 目录；
 " Plug 'ferrine/md-img-paste.vim'                   " markdown 图片复制；
 " Plug 'tpope/vim-fugitive'                         " vim 内部进行 git 管理；
 " Plug 'kana/vim-textobj-user'                      " 
-" Plug 'kana/vim-textobj-indent'
-" Plug 'kana/vim-textobj-syntax'
-" Plug 'kana/vim-textobj-function'
-" Plug 'sgur/vim-textobj-parameter'
-" Plug 'Shougo/echodoc.vim'
-" Plug 'rhysd/clever-f.vim'
-" Plug 'vim-scripts/indentpython.vim'
-" Plug 'lervag/vimtex'
-" Plug 'sirver/ultisnips'
-" Plug 'honza/vim-snippets'
-
-
+" Plug 'kana/vim-textobj-indent'                    "
+" Plug 'kana/vim-textobj-syntax'                    "
+" Plug 'kana/vim-textobj-function'                  "
+" Plug 'sgur/vim-textobj-parameter'                 "
+" Plug 'Shougo/echodoc.vim'                         " 在底部显示函数的参数；
+" Plug 'vim-scripts/indentpython.vim'               " python 缩进；
+" Plug 'lervag/vimtex'                              " 
+" Plug 'sirver/ultisnips'                           " 代码片段；
+" Plug 'honza/vim-snippets'                         " 代码片段； 
 
 " 卸载/禁用插件；
 " UnPlug 'chxuan/prepare-code'

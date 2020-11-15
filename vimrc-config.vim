@@ -374,21 +374,3 @@ inoreabbrev <expr> __
 " map <F5> :VimwikiTOC<CR>
 
 
-
-
-
-
-
-
-
-
-" echodoc.vim
-let g:echodoc_enable_at_startup = 1 
-
-" vim + latex
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-

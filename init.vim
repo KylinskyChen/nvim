@@ -15,7 +15,7 @@ set noeb                            " 关闭错误的提示；
 syntax enable                       " 开启语法高亮功能；
 syntax on                           " 自动语法高亮；
 set t_Co=256                        " 开启256色支持；
-set cmdheight=2                     " 设置命令行的高度；
+set cmdheight=1                     " 设置命令行的高度；
 set showcmd                         " select 模式下显示选中的行数；
 set ruler                           " 总是显示光标位置；
 set laststatus=2                    " 总是显示状态栏；
@@ -153,11 +153,6 @@ autocmd Filetype markdown inoremap ,4 ####<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap ,l --------<Enter>
 autocmd Filetype markdown inoremap ,cc /**/<++><Esc>F*i
 autocmd Filetype markdown inoremap ,zz ><space>作者：解琛<Enter><Enter>><space>时间：
-
-" 格式化 Json 文件
-map <F4><Esc>:%!python -m json.tool<CR>
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 继承自 vim 经典接口的一些功能封装
