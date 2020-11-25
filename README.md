@@ -674,7 +674,7 @@ python2.7 get-pip.py
 export EDITOR=nvim
 ```
 
-## 3.4 coc 报错 
+## 3.4 coc 问题及解决方案 
 
 ### 3.4.1 coc 报错无法使用 ccls 指令
 
@@ -691,5 +691,28 @@ sudo apt install ccls
 ```bash
 sudo npm i -g bash-language-server
 ```
+
+### 3.4.3 Server languageserver.python faild to start
+
+[Python Language Server](https://github.com/palantir/python-language-server) 
+
+```bash
+pip2 install python-language-server
+pip3 install python-language-server
+```
+
+### 3.4.4 Server languageserver.golang faild to start
+
+[Go Language Server ](https://github.com/sourcegraph/go-langserver) 
+
+先将 go 换到国内源，再进行下载安装。
+
+```bash
+export GO111MODULE=on
+export GOPROXY=https://goproxy.cn
+go get -u github.com/sourcegraph/go-langserver
+```
+
+终端会卡在那里，在后台下载，需要蛮久的。
 
 

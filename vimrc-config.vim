@@ -33,7 +33,8 @@ let g:coc_global_extensions = [
 	\ 'coc-vetur',
 	\ 'coc-yaml',
 	\ 'coc-yank',
-	\ 'coc-cmake'
+	\ 'coc-cmake',
+    \ 'coc-rust-analyzer'
 	\ ]
 
 set hidden
