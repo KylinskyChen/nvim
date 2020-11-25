@@ -674,10 +674,22 @@ python2.7 get-pip.py
 export EDITOR=nvim
 ```
 
-## 3.4 coc 报错无法使用 ccls 指令
+## 3.4 coc 报错 
+
+### 3.4.1 coc 报错无法使用 ccls 指令
 
 ```bash
 sudo apt install ccls
+```
+
+### 3.4.2 Server languageserver.bash faild to start
+
+[Language servers](https://github.com/neoclide/coc.nvim/wiki/Language-servers#bash) 
+
+[Bash Language Server](https://github.com/bash-lsp/bash-language-server) 
+
+```bash
+sudo npm i -g bash-language-server
 ```
 
 
