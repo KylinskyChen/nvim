@@ -44,6 +44,7 @@ Plug 'Yggdroot/indentLine'                          " 可视化缩进；
 Plug 'jiangmiao/auto-pairs'                         " 括号自动管理；
 Plug 'tpope/vim-surround'                           " 快速修改对称的符号；
 Plug 'tpope/vim-commentary'                         " 快速注释；
+Plug 'JSpringYC/vim-word'                           " 单词数统计；
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'iamcco/mathjax-support-for-mkdp'              " markdown 公式编辑；
@@ -69,8 +70,8 @@ Plug 'KylinskyChen/vim-hello-word'                  " 背单词；
 " Plug 'lervag/vimtex'                              " 
 " Plug 'sirver/ultisnips'                           " 代码片段；
 " Plug 'honza/vim-snippets'                         " 代码片段； 
-" Plug `guofh/VimStock`                             " 炒股；
-" Plug `yuweijun/vim-im`                            " 中文输入法；
+" Plug 'guofh/VimStock'                             " 炒股；
+" Plug 'yuweijun/vim-im'                            " 中文输入法；
 
 " 卸载/禁用插件；
 " UnPlug 'chxuan/prepare-code'

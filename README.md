@@ -532,6 +532,13 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `:HelloWordExport`        | 导出答错的单词； |
 | `:HelloWordSetVocabulary` | 设置题库路径；   |
 
+### 2.3.22 [JSpringYC/vim-word](https://github.com/JSpringYC/vim-word) 
+
+| 快捷键           | 说明           |
+|------------------|----------------|
+| `:WordCountLine` | 本行字数统计； |
+| `:WordCount`     | 所有字数统计； |
+
 # 三、常规问题及解决方案
 
 ## 3.1 使用 F7 打开 markdown-preview 没有反应，checkhealth 出现 mkp 报错

@@ -389,3 +389,5 @@ noremap <leader>yd :<C-u>Yde<CR>
 " 考研词汇；
 let g:helloword_vocabulary_path="~/.vim/plugged/vim-hello-word/wrodLib/NEEP.json"    
 
+
+
