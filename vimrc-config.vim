@@ -34,7 +34,8 @@ let g:coc_global_extensions = [
 	\ 'coc-yaml',
 	\ 'coc-yank',
 	\ 'coc-cmake',
-    \ 'coc-rust-analyzer'
+    \ 'coc-rust-analyzer',
+    \ 'coc-pyright'
 	\ ]
 
 set hidden
