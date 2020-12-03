@@ -69,6 +69,8 @@ Plug 'KylinskyChen/vim-hello-word'                  " 背单词；
 " Plug 'lervag/vimtex'                              " 
 " Plug 'sirver/ultisnips'                           " 代码片段；
 " Plug 'honza/vim-snippets'                         " 代码片段； 
+" Plug `guofh/VimStock`                             " 炒股；
+" Plug `yuweijun/vim-im`                            " 中文输入法；
 
 " 卸载/禁用插件；
 " UnPlug 'chxuan/prepare-code'
