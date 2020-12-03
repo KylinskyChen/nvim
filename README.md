@@ -517,12 +517,6 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `gcc`  | 注释代码 |
 | `gcap` | 注释段落 |
 
-
-
-
-### 2.3. [](https://github.com/)  
-### 2.3. [](https://github.com/)  
-
 # 三、常规问题及解决方案
 
 ## 3.1 使用 F7 打开 markdown-preview 没有反应，checkhealth 出现 mkp 报错
