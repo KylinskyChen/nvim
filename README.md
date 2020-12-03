@@ -517,6 +517,13 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `gcc`  | 注释代码 |
 | `gcap` | 注释段落 |
 
+### 2.3.20 [ianva/vim-youdao-translater](https://github.com/ianva/vim-youdao-translater) 
+
+| 快捷键       | 说明                             |
+|--------------|----------------------------------|
+| `c-t`        | 翻译当前光标下的单词；           |
+| `<leader>yd` | 在命令行输入要翻译的单词或语句； |
+
 # 三、常规问题及解决方案
 
 ## 3.1 使用 F7 打开 markdown-preview 没有反应，checkhealth 出现 mkp 报错

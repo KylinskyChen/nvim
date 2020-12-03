@@ -50,6 +50,8 @@ Plug 'iamcco/mathjax-support-for-mkdp'              " markdown 公式编辑；
 Plug 'dhruvasagar/vim-table-mode'                   " 表格模式支持；
 Plug 'mzlogin/vim-markdown-toc'                     " markdown 目录； 
 " Plug 'vimwiki/vimwiki'                            " wiki 百科编辑；
+Plug 'ianva/vim-youdao-translater'                  " 有道翻译；
+
 
 " 目前不想使用的一些插件；
 " Plug 'vim-scripts/DoxygenToolkit.vim'             " 自动生成函数头部注释说明；

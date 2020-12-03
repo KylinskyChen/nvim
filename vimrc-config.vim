@@ -368,10 +368,16 @@ inoreabbrev <expr> __
           \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vimwiki
+" vimwiki wiki 百科编辑；
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " let g:vimwiki_list = [{'path': '~/wiki/test/', 'syntax': 'markdown', 'ext': '.md', 'auto_toc': 0, 'auto_tags': 0}]
 " 插入目录；
 " map <F5> :VimwikiTOC<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-youdao-translater 有道翻译；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+vnoremap <silent> <C-T> :<C-u>Ydv<CR>
+nnoremap <silent> <C-T> :<C-u>Ydc<CR>
+noremap <leader>yd :<C-u>Yde<CR>
 
