@@ -524,6 +524,14 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `c-t`        | 翻译当前光标下的单词；           |
 | `<leader>yd` | 在命令行输入要翻译的单词或语句； |
 
+### 2.3.21 [voldikss/vim-hello-word](https://github.com/voldikss/vim-hello-word) 
+
+| 快捷键                    | 说明             |
+|---------------------------|------------------|
+| `:HelloWord`              | 开始答题；       |
+| `:HelloWordExport`        | 导出答错的单词； |
+| `:HelloWordSetVocabulary` | 设置题库路径；   |
+
 # 三、常规问题及解决方案
 
 ## 3.1 使用 F7 打开 markdown-preview 没有反应，checkhealth 出现 mkp 报错

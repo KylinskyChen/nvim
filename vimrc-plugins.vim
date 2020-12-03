@@ -51,6 +51,7 @@ Plug 'dhruvasagar/vim-table-mode'                   " 表格模式支持；
 Plug 'mzlogin/vim-markdown-toc'                     " markdown 目录； 
 " Plug 'vimwiki/vimwiki'                            " wiki 百科编辑；
 Plug 'ianva/vim-youdao-translater'                  " 有道翻译；
+Plug 'KylinskyChen/vim-hello-word'                  " 背单词；
 
 
 " 目前不想使用的一些插件；

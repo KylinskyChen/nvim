@@ -381,3 +381,11 @@ vnoremap <silent> <C-T> :<C-u>Ydv<CR>
 nnoremap <silent> <C-T> :<C-u>Ydc<CR>
 noremap <leader>yd :<C-u>Yde<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-hello-word 背单词；
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 六级词汇；
+" let g:helloword_vocabulary_path="~/.vim/plugged/vim-hello-word/wrodLib/CET6.json"    
+" 考研词汇；
+let g:helloword_vocabulary_path="~/.vim/plugged/vim-hello-word/wrodLib/NEEP.json"    
+
