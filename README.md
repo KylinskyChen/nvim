@@ -3,13 +3,15 @@
 ```bash
 sudo apt install yarn
 sudo apt install vim neovim
+sudo apt install python-pip
+sudo apt install python3-pip
 pip3 install pynvim
 pip2 install pynvim
 sudo apt install ruby ruby-dev
 gem sources -a https://gems.ruby-china.com
-gem install -g neovim
-sud apt install npm
-npm config set registry https://registry.npm.taobao.org/
+sudo gem install -g neovim
+sudo apt install npm
+npm config set registry https://registry.n\pm.taobao.org/
 sudo npm install -g neovim
 git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 ```
