@@ -12,30 +12,20 @@ let g:coc_global_extensions = [
 	\ 'coc-actions',
 	\ 'coc-css',
 	\ 'coc-diagnostic',
-	\ 'coc-explorer',
 	\ 'coc-flutter-tools',
 	\ 'coc-gitignore',
-	\ 'coc-html',
 	\ 'coc-json',
 	\ 'coc-lists',
-	\ 'coc-prettier',
 	\ 'coc-python',
 	\ 'coc-snippets',
-	\ 'coc-sourcekit',
-	\ 'coc-stylelint',
 	\ 'coc-syntax',
 	\ 'coc-tasks',
 	\ 'coc-todolist',
 	\ 'coc-translator',
-	\ 'coc-tslint-plugin',
-	\ 'coc-tsserver',
 	\ 'coc-vimlsp',
-	\ 'coc-vetur',
-	\ 'coc-yaml',
 	\ 'coc-yank',
 	\ 'coc-cmake',
     \ 'coc-rust-analyzer',
-    \ 'coc-pyright'
 	\ ]
 
 set hidden
@@ -212,7 +202,7 @@ nnoremap <leader>l :Tab /\|<cr>
 nnoremap <leader>= :Tab /=<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" gv 快速查看 git 仓库；
+" gv 快速查看 git 提交历史记录；
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>g :GV<cr>
 nnoremap <leader>G :GV!<cr>

@@ -18,7 +18,7 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 
 进入之后，输入 `:checkhealth` 进行环境检查，根据提示，让所有要求都变成 ok。
 
-环境检查通过之后，进入 `nvim`，按下快捷键 `,,i` 快速安装插件即可。
+环境检查通过之后，进入 `nvim`，按下快捷键 `\\i` 快速安装插件即可。
 
 # 二、快捷键
 
@@ -329,8 +329,7 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 | `zj`                  | 移动至下一个折叠；                        |
 | `zk`                  | 移动至上一个折叠；                        |
 | `zn`                  | 禁用折叠；                                |
-| `zN`                  | 启用折叠；                                |
-| `zfa(`                | 折叠括号或其他符号内的文字；              |
+| `zN`                  | 启用折叠；                                |Taglist| `zfa(`                | 折叠括号或其他符号内的文字；              |
 | :mkview               | 保存折叠状态；                            |
 | :loadview             | 载入记忆的折叠信息；                      |
 
@@ -540,6 +539,12 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 |------------------|----------------|
 | `:WordCountLine` | 本行字数统计； |
 | `:WordCount`     | 所有字数统计； |
+
+### 2.3.23 [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
+
+| 快捷键           | 说明           |
+|------------------|----------------|
+
 
 # 三、常规问题及解决方案
 

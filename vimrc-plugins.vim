@@ -26,7 +26,6 @@ Plug 'chxuan/change-colorscheme'                    " 主题切换；
 Plug 'gorodinskiy/vim-coloresque'                   " 自动识别并阅览 RGB 语法；
 Plug 'ryanoasis/vim-devicons'                       " 图标；
 Plug 'octol/vim-cpp-enhanced-highlight'             " c++ 加强版高亮；
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      " 目录树高亮插件；
 
 Plug 'chxuan/vim-edit'                              " vim 编辑；
 Plug 'chxuan/cpp-mode'                              " 代码编辑工具；
@@ -36,7 +35,6 @@ Plug 'scrooloose/nerdtree'                          " 目录树；
 Plug 'Xuyuanp/nerdtree-git-plugin'                  " 目录树 git 插件；
 Plug 'chxuan/tagbar'                                " 函数列表；
 Plug 'godlygeek/tabular'                            " 对齐插件；
-Plug 'junegunn/gv.vim'                              " 查看 git 仓库；
 Plug '907th/vim-auto-save'                          " 自动保存；
 Plug 'terryma/vim-smooth-scroll'                    " 上下流畅滚动；
 Plug 'skywind3000/vim-terminal-help'                " 快速呼出终端；
@@ -50,16 +48,14 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'iamcco/mathjax-support-for-mkdp'              " markdown 公式编辑；
 Plug 'dhruvasagar/vim-table-mode'                   " 表格模式支持；
 Plug 'mzlogin/vim-markdown-toc'                     " markdown 目录； 
-" Plug 'vimwiki/vimwiki'                            " wiki 百科编辑；
-Plug 'ianva/vim-youdao-translater'                  " 有道翻译；
-Plug 'KylinskyChen/vim-hello-word'                  " 背单词；
 
+Plug 'tpope/vim-fugitive'                           " vim 内部进行 git 管理；
+Plug 'junegunn/gv.vim'                              " 查看 git 提交记录；
 
 " 目前不想使用的一些插件；
 " Plug 'vim-scripts/DoxygenToolkit.vim'             " 自动生成函数头部注释说明；
 " Plug 'previm/previm'                              " 一位日本人写的 markdown 预览插件；
 " Plug 'ferrine/md-img-paste.vim'                   " markdown 图片复制；
-" Plug 'tpope/vim-fugitive'                         " vim 内部进行 git 管理；
 " Plug 'kana/vim-textobj-user'                      " 
 " Plug 'kana/vim-textobj-indent'                    "
 " Plug 'kana/vim-textobj-syntax'                    "
@@ -72,6 +68,10 @@ Plug 'KylinskyChen/vim-hello-word'                  " 背单词；
 " Plug 'honza/vim-snippets'                         " 代码片段； 
 " Plug 'guofh/VimStock'                             " 炒股；
 " Plug 'yuweijun/vim-im'                            " 中文输入法；
+" Plug 'vimwiki/vimwiki'                            " wiki 百科编辑；
+" Plug 'ianva/vim-youdao-translater'                " 有道翻译；
+" Plug 'KylinskyChen/vim-hello-word'                " 背单词；
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'    " 目录树高亮插件；
 
 " 卸载/禁用插件；
 " UnPlug 'chxuan/prepare-code'
