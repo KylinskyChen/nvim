@@ -41,7 +41,7 @@ sudo gem install neovim
 
 | 快捷键              | 说明                              |
 |---------------------|-----------------------------------|
-| `,`                 | leader 键；                       |
+| `\`                 | leader 键；                       |
 | `<leader>ve`        | 快速编辑 init.vim          文件； |
 | `<leader>vp`        | 快速编辑 vimrc-plugins.vim 文件； |
 | `<leader>vc`        | 快速编辑 vimrc-config.vim  文件； |
