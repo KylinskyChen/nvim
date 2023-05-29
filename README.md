@@ -1,5 +1,7 @@
 # 一、安装
 
+## ubuntu
+
 ```bash
 sudo apt install yarn
 sudo apt install vim neovim
@@ -19,6 +21,19 @@ git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
 进入之后，输入 `:checkhealth` 进行环境检查，根据提示，让所有要求都变成 ok。
 
 环境检查通过之后，进入 `nvim`，按下快捷键 `,,i` 快速安装插件即可。
+
+## mac
+
+```bash
+brew install yarn vim neovim npm
+gem sources -a https://gems.ruby-china.com
+npm config set registry https://registry.n\pm.taobao.org/
+sudo npm install -g neovim
+git clone https://github.com/KylinskyChen/nvim.git ~/.config/nvim
+gem sources --add https://gems.ruby-china.com
+gem sources --update
+sudo gem install neovim
+```
 
 # 二、快捷键
 
