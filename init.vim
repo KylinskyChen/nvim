@@ -4,10 +4,12 @@
 " | | | |  __/ (_) \ V /| | | | | | |
 " |_| |_|\___|\___/ \_/ |_|_| |_| |_|
 
+echo ""
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 通用设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let mapleader=","                   " 定义 <leader> 键；
+" let mapleader=","                 " 定义 <leader> 键；
 set nocompatible                    " 设置不兼容原始 vi 模式；
 filetype on                         " 设置开启文件类型侦测；
 filetype plugin on                  " 设置加载对应文件类型的插件；
@@ -27,6 +29,7 @@ set virtualedit=block,onemore       " 允许光标出现在最后一个字符的
 set mouse=a                         " 开启鼠标；
 set relativenumber                  " 开启相对行号；
 set clipboard=unnamedplus           " 默认复制到系统剪切板；
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 代码缩进和排版
@@ -100,7 +103,7 @@ endif
     set guioptions-=r               " 隐藏右侧滚动条；
     set guioptions-=b               " 隐藏底部滚动条；
     set showtabline=0               " 隐藏 Tab 栏；
-    set guicursor=n-v-c:ver5        " 设置光标为竖线；
+    " set guicursor=n-v-c:ver5      " 设置光标为竖线；
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -121,12 +124,11 @@ if(has("win32") || has("win64") || has("win95") || has("win16"))
 else
     let g:homePath = $HOME . "/.config/nvim/"
 endif
-echo "行胜于言"
 
 " 编辑 init.vim 相关的配置文件；
 execute ("nnoremap <leader>ve :edit " . (g:homePath . 'init.vim') . "<cr>")
-execute ("nnoremap <leader>vc :edit " . (g:homePath . 'config.vim') . "<cr>")
-execute ("nnoremap <leader>vp :edit " . (g:homePath . 'plugins.vim') . "<cr>")
+execute ("nnoremap <leader>vc :edit " . (g:homePath . 'vimrc-config.vim') . "<cr>")
+execute ("nnoremap <leader>vp :edit " . (g:homePath . 'vimrc-plugins.vim') . "<cr>")
 
 " 重新加载 init.vim 文件；
 execute ("nnoremap <leader>s :source " . (g:homePath . 'init.vim') . "<cr>")

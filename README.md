@@ -42,6 +42,8 @@ git clone https://github.com/KylinskyChen/nvim.git C:\\\\Users\\Administrator\\A
 pip install pynvim
 npm config set registry https://registry.n\pm.taobao.org/
 sudo npm install -g neovim
+
+pip install ranger-fm 
 ```
 
 # 二、快捷键
@@ -406,6 +408,7 @@ sudo npm install -g neovim
 | `N`        | 向相反方向执行上一次搜索；     |
 | `*`        | 向前搜索光标下的单词；         |
 | `#`        | 向后搜索光标下的单词；         |
+| `Shift-n`  | 取消查找；                     |
 
 ### 2.3.6 [chxuan/change-colorscheme](https://github.com/chxuan/change-colorscheme) 
 
@@ -452,9 +455,11 @@ sudo npm install -g neovim
 
 ### 2.3.9 [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) 
 
-| 快捷键              | 说明                                      |
-|---------------------|-------------------------------------------|
-| `<leader>n`         | 打开/关闭代码资源管理器                   |
+| 快捷键           | 说明                      |
+|------------------|---------------------------|
+| `<leader>n`      | 打开/关闭代码资源管理器； |
+| `:NerdTree F:\`  | 切换盘符；                |
+| `:Bookmark name` | 将选中的目录设置为书签；  |
 
 ### 2.3.10 [chxuan/tagbar](https://github.com/chxuan/tagbar) 
 

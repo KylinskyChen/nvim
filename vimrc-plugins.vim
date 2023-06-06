@@ -72,6 +72,8 @@ Plug 'junegunn/gv.vim'                              " 查看 git 提交记录；
 " Plug 'ianva/vim-youdao-translater'                " 有道翻译；
 " Plug 'KylinskyChen/vim-hello-word'                " 背单词；
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'    " 目录树高亮插件；
+" Plug 'francoiscabrol/ranger.vim'                  " ranger；
+" Plug 'rbgrouleff/bclose.vim'                      " neovim ranger 依赖；
 
 " 卸载/禁用插件；
 " UnPlug 'chxuan/prepare-code'
