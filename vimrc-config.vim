@@ -378,7 +378,7 @@ noremap <leader>yd :<C-u>Yde<CR>
 " 六级词汇；
 " let g:helloword_vocabulary_path="~/.vim/plugged/vim-hello-word/wrodLib/CET6.json"    
 " 考研词汇；
-let g:helloword_vocabulary_path="~/.vim/plugged/vim-hello-word/wrodLib/NEEP.json"    
+" let g:helloword_vocabulary_path="~/.vim/plugged/vim-hello-word/wrodLib/NEEP.json"    
 
 
 

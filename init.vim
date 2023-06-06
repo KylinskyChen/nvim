@@ -89,11 +89,11 @@ colorscheme onedark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("gui_running")
     let system = system('uname -s')
-    if system == "Darwin\n"
-        set guifont=Droid\ Sans\ Mono\ Nerd\ Font\ Complete:h18 " 设置字体；
-    else
-        set guifont=DroidSansMono\ Nerd\ Font\ Regular\ 18      " 设置字体；
-    endif
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+    set guifont=DroidSansM\ Nerd\ Font:h8
+else
+    set guifont=Droid\ Sans\ Mono\ Nerd\ Font\ Complete:h18  
+endif   
     set guioptions-=m               " 隐藏菜单栏；
     set guioptions-=T               " 隐藏工具栏；
     set guioptions-=L               " 隐藏左侧滚动条；
@@ -116,18 +116,23 @@ command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neovim xc 的插件控制
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if(has("win32") || has("win64") || has("win95") || has("win16"))
+    let g:homePath = "C:\\Users\\Administrator\\AppData\\Local\\nvim\\"
+else
+    let g:homePath = $HOME . "/.config/nvim/"
+endif
+echo "行胜于言"
 
 " 编辑 init.vim 相关的配置文件；
-nnoremap <leader>ve :edit $MYVIMRC<cr>
-nnoremap <leader>vc :edit ~/.config/nvim/vimrc-config.vim<cr>
-nnoremap <leader>vp :edit ~/.config/nvim/vimrc-plugins.vim<cr>
+execute ("nnoremap <leader>ve :edit " . (g:homePath . 'init.vim') . "<cr>")
+execute ("nnoremap <leader>vc :edit " . (g:homePath . 'config.vim') . "<cr>")
+execute ("nnoremap <leader>vp :edit " . (g:homePath . 'plugins.vim') . "<cr>")
 
 " 重新加载 init.vim 文件；
-nnoremap <leader>s :source $MYVIMRC<cr>
+execute ("nnoremap <leader>s :source " . (g:homePath . 'init.vim') . "<cr>")
 
 " 查看帮助文件；
-" nnoremap <leader>vh :view +let\ &l:modifiable=0 ~/.config/nvim/README.md<cr>
-nnoremap <leader>h :edit ~/.config/nvim/README.md<cr>
+execute ("nnoremap <leader>h :edit " . (g:homePath . 'README.md') . "<cr>")
 
 " 安装、更新、删除插件；
 nnoremap <leader><leader>i :PlugInstall<cr>
@@ -173,11 +178,12 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 插件列表
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
+
+execute ("call plug#begin('" . g:homePath . "plugged')")
 
 " 加载插件列表；
-if filereadable(expand($HOME . '/.config/nvim/vimrc-plugins.vim'))
-    source $HOME/.config/nvim/vimrc-plugins.vim 
+if filereadable(expand(g:homePath . 'vimrc-plugins.vim'))
+    execute 'source' (g:homePath . 'vimrc-plugins.vim')
 endif
 
 call plug#end()  
@@ -186,7 +192,6 @@ call plug#end()
 runtime macros/matchit.vim
 
 " 加载插件的自定义配置；
-if filereadable(expand($HOME . '/.config/nvim/vimrc-config.vim'))
-    source $HOME/.config/nvim/vimrc-config.vim
+if filereadable(expand(g:homePath . 'vimrc-config.vim'))
+    execute 'source' (g:homePath . 'vimrc-config.vim')
 endif
-

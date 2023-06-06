@@ -35,6 +35,15 @@ gem sources --update
 sudo gem install neovim
 ```
 
+## windows
+
+```bash
+git clone https://github.com/KylinskyChen/nvim.git C:\\\\Users\\Administrator\\AppData\\Local
+pip install pynvim
+npm config set registry https://registry.n\pm.taobao.org/
+sudo npm install -g neovim
+```
+
 # 二、快捷键
 
 ## 2.1 插件控制及帮助
@@ -316,7 +325,7 @@ sudo gem install neovim
 ## 2.2.11 其他
 
 | 快捷键                | 说明                                      |
-|-----------------------|-------------------------------------------|
+| --------------------- | ----------------------------------------- |
 | `vim -u NONE -N`      | 开启vim时不加载vimrc文件                  |
 | `vimdiff file1 file2` | 显示文件差异                              |
 | `vim -R filename`     | 以只读方式打开（阅读模式）                |
@@ -344,7 +353,8 @@ sudo gem install neovim
 | `zj`                  | 移动至下一个折叠；                        |
 | `zk`                  | 移动至上一个折叠；                        |
 | `zn`                  | 禁用折叠；                                |
-| `zN`                  | 启用折叠；                                |Taglist| `zfa(`                | 折叠括号或其他符号内的文字；              |
+| `zN`                  | 启用折叠；                                |
+| `zfa(`                | 折叠括号或其他符号内的文字；              |
 | :mkview               | 保存折叠状态；                            |
 | :loadview             | 载入记忆的折叠信息；                      |
 
@@ -753,4 +763,12 @@ go get -u github.com/sourcegraph/go-langserver
 
 终端会卡在那里，在后台下载，需要蛮久的。
 
+## 3.5 更换终端字体
 
+[ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+
+下载[安装字体 nerd-fonts](https://github.com/ryanoasis/nerd-fonts/releases/tag/v3.0.2)
+
+使用 [Droid Sans Mono](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/DroidSansMono.zip)
+
+[修改 windows 字体的小工具](https://objects.githubusercontent.com/github-production-release-asset-2e65be/77316788/45adcb24-b46e-4e08-93dd-37cff1f79702?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230606%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230606T023645Z&X-Amz-Expires=300&X-Amz-Signature=c356119f6f9f4aba76fc51df3193ba369797ce9d07ef8c6562cd4941aca7d658&X-Amz-SignedHeaders=host&actor_id=30420247&key_id=0&repo_id=77316788&response-content-disposition=attachment%3B%20filename%3DnoMeiryoUI3.1.0.zip&response-content-type=application%2Foctet-stream)
