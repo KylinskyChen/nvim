@@ -22,10 +22,10 @@ Plug 'rhysd/clever-f.vim'                           " 提升 f 和 F 的检索�
 
 Plug 'vim-airline/vim-airline'                      " 底部状态条； 
 Plug 'vim-airline/vim-airline-themes'               " 底部状态条的主题；
-Plug 'chxuan/change-colorscheme'                    " 主题切换；
-Plug 'gorodinskiy/vim-coloresque'                   " 自动识别并阅览 RGB 语法；
 Plug 'ryanoasis/vim-devicons'                       " 图标；
 Plug 'octol/vim-cpp-enhanced-highlight'             " c++ 加强版高亮；
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 Plug 'chxuan/vim-edit'                              " vim 编辑；
 Plug 'chxuan/cpp-mode'                              " 代码编辑工具；
@@ -43,11 +43,6 @@ Plug 'jiangmiao/auto-pairs'                         " 括号自动管理；
 Plug 'tpope/vim-surround'                           " 快速修改对称的符号；
 Plug 'tpope/vim-commentary'                         " 快速注释；
 Plug 'JSpringYC/vim-word'                           " 单词数统计；
-
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'iamcco/mathjax-support-for-mkdp'              " markdown 公式编辑；
-Plug 'dhruvasagar/vim-table-mode'                   " 表格模式支持；
-Plug 'mzlogin/vim-markdown-toc'                     " markdown 目录； 
 
 Plug 'tpope/vim-fugitive'                           " vim 内部进行 git 管理；
 Plug 'junegunn/gv.vim'                              " 查看 git 提交记录；
@@ -74,6 +69,14 @@ Plug 'junegunn/gv.vim'                              " 查看 git 提交记录；
 " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'    " 目录树高亮插件；
 " Plug 'francoiscabrol/ranger.vim'                  " ranger；
 " Plug 'rbgrouleff/bclose.vim'                      " neovim ranger 依赖；
+" Plug 'chxuan/change-colorscheme'                    " 主题切换；
+" Plug 'gorodinskiy/vim-coloresque'                   " 自动识别并阅览 RGB 语法；
+" Plug 'iamcco/mathjax-support-for-mkdp'              " markdown 公式编辑；
+" Plug 'dhruvasagar/vim-table-mode'                   " 表格模式支持；
+" Plug 'mzlogin/vim-markdown-toc'                     " markdown 目录； 
+" Plug 'cateduo/vsdark.nvim'                          " 高亮； 
+" Plug 'nvimdev/galaxyline.nvim'                      " 主题；
+
 
 " 卸载/禁用插件；
 " UnPlug 'chxuan/prepare-code'

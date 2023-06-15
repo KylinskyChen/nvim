@@ -777,3 +777,9 @@ go get -u github.com/sourcegraph/go-langserver
 使用 [Droid Sans Mono](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/DroidSansMono.zip)
 
 [修改 windows 字体的小工具](https://objects.githubusercontent.com/github-production-release-asset-2e65be/77316788/45adcb24-b46e-4e08-93dd-37cff1f79702?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230606%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230606T023645Z&X-Amz-Expires=300&X-Amz-Signature=c356119f6f9f4aba76fc51df3193ba369797ce9d07ef8c6562cd4941aca7d658&X-Amz-SignedHeaders=host&actor_id=30420247&key_id=0&repo_id=77316788&response-content-disposition=attachment%3B%20filename%3DnoMeiryoUI3.1.0.zip&response-content-type=application%2Foctet-stream)
+
+## 3.6 C 代码检索工具安装
+
+[clangd 官方网站](https://github.com/clangd/clangd/releases)
+
+

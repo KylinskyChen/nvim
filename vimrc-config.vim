@@ -26,6 +26,9 @@ let g:coc_global_extensions = [
 	\ 'coc-yank',
 	\ 'coc-cmake',
     \ 'coc-rust-analyzer',
+    \ 'coc-markmap',
+    \ 'coc-clangd',
+    \ 'coc-clang-format-style-options',
 	\ ]
 
 set hidden
@@ -86,7 +89,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " 当前变量重命名；
 nmap <leader>rn <Plug>(coc-rename)
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ack 全局文本搜索；
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>F :Ack!<space>
@@ -121,19 +124,6 @@ let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" change-colorscheme 页面主题；
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <F9> :PreviousColorScheme<cr>
-inoremap <silent> <F9> <esc> :PreviousColorScheme<cr>
-nnoremap <silent> <F10> :NextColorScheme<cr>
-inoremap <silent> <F10> <esc> :NextColorScheme<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" prepare-code 预定义代码片段；
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:prepare_code_plugin_path = expand($HOME . "/.vim/plugged/prepare-code")
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-edit 文本编辑工具；
@@ -360,26 +350,10 @@ inoreabbrev <expr> __
           \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vimwiki wiki 百科编辑；
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:vimwiki_list = [{'path': '~/wiki/test/', 'syntax': 'markdown', 'ext': '.md', 'auto_toc': 0, 'auto_tags': 0}]
-" 插入目录；
-" map <F5> :VimwikiTOC<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-youdao-translater 有道翻译；
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vnoremap <silent> <C-T> :<C-u>Ydv<CR>
 nnoremap <silent> <C-T> :<C-u>Ydc<CR>
 noremap <leader>yd :<C-u>Yde<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-hello-word 背单词；
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 六级词汇；
-" let g:helloword_vocabulary_path="~/.vim/plugged/vim-hello-word/wrodLib/CET6.json"    
-" 考研词汇；
-" let g:helloword_vocabulary_path="~/.vim/plugged/vim-hello-word/wrodLib/NEEP.json"    
-
 
 
