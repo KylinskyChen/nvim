@@ -380,11 +380,25 @@ pip install ranger-fm
 | `K`                    | 查看文档说明；                |
 | `<leader>rn`           | 当前变量重命名；              |
 
-### 2.3.2 [mileszs/ack.vim](https://github.com/mileszs/ack.vim) 
+### 2.3.2 vimgrep
 
-| 快捷键      | 说明                 |
-|-------------|----------------------|
-| `<leader>F` | 搜索当前目录下的文本 |
+`vimgrep /匹配模式/[g][j] 要搜索的文件/范围`。
+
+- g: 表示是否把每一行的多个匹配结果都加入；
+- j: 表示是否搜索完后定位到第一个匹配位置；
+
+| 快捷键                    | 说明                           |
+|---------------------------|--------------------------------|
+| `:vimgrep /pattern/ %`    | 在当前打开文件中查找；         |
+| `:vimgrep /pattern/ *`    | 在当前目录下查找所有；         |
+| `:vimgrep /pattern/ **`   | 在当前目录及子目录下查找所有； |
+| `:vimgrep /pattern/ *.c`  | 查找当前目录下所有 `.c` 文件； |
+| `:vimgrep /pattern/ **/*` | 只查找子目录；                 |
+| `cn`                      | 查找下一个；                   |
+| `cp`                      | 查找上一个；                   |
+| `copen`                   | 打开quickfix；                 |
+| `cw`                      | 打开quickfix；                 |
+| `cclose`                  | 关闭qucikfix；                 |
 
 ### 2.3.3 [junegunn/fzf](https://github.com/junegunn/fzf)
 

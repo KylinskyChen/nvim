@@ -121,6 +121,7 @@ command! -nargs=1 -bar UnPlug call s:deregister(<args>)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if(has("win32") || has("win64") || has("win95") || has("win16"))
     let g:homePath = "C:\\Users\\Administrator\\AppData\\Local\\nvim\\"
+    execute ("cd C:\\Users\\Administrator\\Desktop\\")
 else
     let g:homePath = $HOME . "/.config/nvim/"
 endif

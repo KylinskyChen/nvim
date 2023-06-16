@@ -13,7 +13,6 @@ Plug 'KylinskyChen/vimplus-startify'                " neovim 的主界面；
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}     " coc 插件系统；
 
-Plug 'mileszs/ack.vim'                              " 并行于系统命令 grep 的搜索命令；
 Plug 'junegunn/fzf'                                 " 用于检索文件的工具；
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }   " 检索工具；
 Plug 'haya14busa/incsearch.vim'                     " 文本内快速检索工具；
@@ -26,6 +25,9 @@ Plug 'ryanoasis/vim-devicons'                       " 图标；
 Plug 'octol/vim-cpp-enhanced-highlight'             " c++ 加强版高亮；
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'dhruvasagar/vim-table-mode'                   " 表格模式支持；
+
+Plug 'mzlogin/vim-markdown-toc'                     " markdown 目录； 
 
 Plug 'chxuan/vim-edit'                              " vim 编辑；
 Plug 'chxuan/cpp-mode'                              " 代码编辑工具；
@@ -72,11 +74,9 @@ Plug 'junegunn/gv.vim'                              " 查看 git 提交记录；
 " Plug 'chxuan/change-colorscheme'                    " 主题切换；
 " Plug 'gorodinskiy/vim-coloresque'                   " 自动识别并阅览 RGB 语法；
 " Plug 'iamcco/mathjax-support-for-mkdp'              " markdown 公式编辑；
-" Plug 'dhruvasagar/vim-table-mode'                   " 表格模式支持；
-" Plug 'mzlogin/vim-markdown-toc'                     " markdown 目录； 
 " Plug 'cateduo/vsdark.nvim'                          " 高亮； 
 " Plug 'nvimdev/galaxyline.nvim'                      " 主题；
-
+" Plug 'mileszs/ack.vim'                              " 并行于系统命令 grep 的搜索命令；
 
 " 卸载/禁用插件；
 " UnPlug 'chxuan/prepare-code'
