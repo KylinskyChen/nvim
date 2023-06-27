@@ -45,6 +45,7 @@ Plug 'jiangmiao/auto-pairs'                         " 括号自动管理；
 Plug 'tpope/vim-surround'                           " 快速修改对称的符号；
 Plug 'tpope/vim-commentary'                         " 快速注释；
 Plug 'JSpringYC/vim-word'                           " 单词数统计；
+Plug 'mileszs/ack.vim'                              " 并行于系统命令 grep 的搜索命令；
 
 Plug 'tpope/vim-fugitive'                           " vim 内部进行 git 管理；
 Plug 'junegunn/gv.vim'                              " 查看 git 提交记录；
@@ -76,7 +77,6 @@ Plug 'junegunn/gv.vim'                              " 查看 git 提交记录；
 " Plug 'iamcco/mathjax-support-for-mkdp'              " markdown 公式编辑；
 " Plug 'cateduo/vsdark.nvim'                          " 高亮； 
 " Plug 'nvimdev/galaxyline.nvim'                      " 主题；
-" Plug 'mileszs/ack.vim'                              " 并行于系统命令 grep 的搜索命令；
 
 " 卸载/禁用插件；
 " UnPlug 'chxuan/prepare-code'

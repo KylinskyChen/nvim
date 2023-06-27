@@ -184,8 +184,8 @@ nnoremap <silent> <leader>t :TagbarToggle<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tabular 自动对齐的插件；
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>l :Tab /\|<cr>
-nnoremap <leader>= :Tab /=<cr>
+nnoremap <leader>l :Tabularize /\|<cr>
+nnoremap <leader>= :Tabularize /=<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gv 快速查看 git 提交历史记录；
